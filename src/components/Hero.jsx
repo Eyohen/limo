@@ -65,7 +65,7 @@ const Hero = () => {
       <div className='absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer '>
         <BsChevronCompactRight onClick={nextSlide} size={25}/>
       </div>
-      <div className='flex top-4 ml-[120px] md:ml-64 py-2 gap-4'>
+      <div className='flex top-4 items-center  justify-center py-2 gap-4'>
         {slides.map((slide, slideIndex) => (
           <div key={slideIndex} onClick={() => goToSlide(slideIndex)} className='text-2xl cursor-pointer'>
             <RxDotFilled color='white' size={30} />
