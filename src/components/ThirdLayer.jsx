@@ -7,7 +7,7 @@ const ThirdLayer = () => {
   return (
     <div className='bg-white'>
     <div className='justify-center'>
-    <div className='flex justify-evenly items-center py-16 md:flex-row flex-col gap-y-6 mb-12 mt-16'>
+    <div className='flex justify-evenly items-center py-16 md:flex-row flex-col gap-y-12 mb-12 mt-16'>
      <div className='flex flex-col items-center'>
     <img src={AirportTransfers} alt='' className='w-[300px] h-[220px] items-center'/>
     <p className='font-bold text-xl text-center mt-2'>Airport Transfers</p>
