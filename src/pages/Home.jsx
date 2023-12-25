@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import BlackNavbar from '../components/BlackNavbar'
 import SecondLayer from '../components/SecondLayer'
 import ThirdLayer from '../components/ThirdLayer'
-import Fourthlayer from '../components/Fourthlayer'
+import FourthLayer from '../components/FourthLayer'
 import BenzSClass from '../assets/BenzSClass.jpg'
 import BenzEClass from '../assets/BenzE-Class.jpg'
 import BenzEQS from '../assets/BenzEQS.jpg'
@@ -18,7 +18,7 @@ const Home = () => {
         <Hero/>
         <SecondLayer/>
         <ThirdLayer />
-       <Fourthlayer/>
+       <FourthLayer/>
       
 <div className='bg-[#CFD9E6] py-1'>
 

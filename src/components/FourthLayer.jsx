@@ -2,7 +2,7 @@ import React from 'react'
 import Innerdash from '../assets/innerdash.jpg'
 
 
-const Fourthlayer = () => {
+const FourthLayer = () => {
   return (
     <div style={{backgroundImage:`url(${Innerdash})`,
     backgroundSize:'cover',
@@ -24,4 +24,4 @@ const Fourthlayer = () => {
   )
 }
 
-export default Fourthlayer
+export default FourthLayer
