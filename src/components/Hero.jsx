@@ -59,7 +59,7 @@ const [timer, setTimer] = useState(null)
 
         setCurrentIndex(prevState => prevState === slides.length - 1 ? 0 : prevState + 1)
         console.log('something')
-      }, 4000)
+      }, 9000)
       setTimer(anotherOne)
         return () => {
           clearInterval(anotherOne)
