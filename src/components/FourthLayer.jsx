@@ -1,5 +1,5 @@
 import React from 'react'
-import Innerdash from '../assets/innerdash.jpg'
+import Innerdash from '../assets/RefinedTravel.jpg'
 
 
 const FourthLayer = () => {
@@ -9,7 +9,7 @@ const FourthLayer = () => {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     // height: '500px',
-    }} className='w-full h-[300px] rounded-tl-lg bg-center bg-cover duration-500 opacity-25  justify-center items-center'>
+    }} className='w-full h-[300px] rounded-tl-lg bg-center bg-cover duration-500 justify-center items-center'>
 
         <div className='items-center mx-auto flex flex-col'>
 <p className='font-bold text-4xl mt-4'>The epitome of refined travel</p>

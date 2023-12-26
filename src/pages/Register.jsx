@@ -46,23 +46,25 @@ const Register = () => {
 
 
     <h1 className="text-2xl font-bold text-center text-black mt-6">Sign Up Form</h1>
-<div className="flex justify-center items-center h-[60vh] ">
+
       
        
-         <div className="flex space-x-12 items-center">
+    <div className="flex md:flex-row flex-col justify-center space-x-12 items-center h-[100vh]">
          <img src={benzinterior} alt="" className="w-[500px] h-[350px] object-cover " />
 
          <div className="">
-         <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full Name</label>
+         <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-9">Full Name</label>
             <input onChange={(e)=>setFirstName(e.target.value)} type="text" id="first_name" class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="e.g johndoe@gmail.com" required />
 
-            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-2">Email</label>
             <input onChange={(e)=>setEmail(e.target.value)} type="text" id="first_name" class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="e.g johndoe@gmail.com" required />
         
-            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-9">Password</label>
+            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-2">Password</label>
             <input onChange={(e)=>setPassword(e.target.value)} type="text" id="first_name" class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="******" required />
         
-
+            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-2">Confirm Password</label>
+            <input onChange={(e)=>setPassword(e.target.value)} type="text" id="first_name" class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="******" required />
+        
           {/* <label >Enter Email</label>
          <input onChange={(e)=>setEmail(e.target.value)} className="w-full px-4 py-2  border border-gray-300 rounded-lg mt-2" type="text" placeholder="Enter your email" /> */}
 
@@ -75,7 +77,7 @@ const Register = () => {
           <p className="text-gray-500 hover:text-black"><Link to="/register">Sign Up</Link></p>
          </div>
         </div>
-        </div>
+
 
 
 

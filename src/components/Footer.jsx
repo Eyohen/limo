@@ -1,5 +1,12 @@
 import React from 'react'
 import NudeLogo from '../assets/NudeLogo.png'
+import { Link } from 'react-router-dom'
+import tiktok from '../assets/tiktok.png'
+import instagram from '../assets/instagram.png'
+import twitter from '../assets/twitter.png'
+import youtube from '../assets/youtube.png'
+import facebook from '../assets/facebook.png'
+
 
 const Footer = () => {
   return (
@@ -20,22 +27,40 @@ const Footer = () => {
 
 
         <div className=''>  
-        <p className='font-bold'>Home</p>
-        <p className='font-bold mt-3'>About Us</p>
-        <p className='font-bold mt-3'>Services</p>
-        <p className='font-bold mt-3'>Events</p>
-        <p className='font-bold mt-3'>Contact Us</p>
-        <p className='font-bold mt-3'>Reservations</p>
-        <p className='font-bold mt-3'>Our Fleet</p>
+        <Link to={'/'}><p className='font-bold'>Home</p></Link>
+        <Link to={'/aboutus'}><p className='font-bold mt-3'>About Us</p></Link>
+        <Link to={'/services'}><p className='font-bold mt-3'>Services</p></Link>
+        <Link to={'/events'}><p className='font-bold mt-3'>Events</p></Link>
+        <Link to={'/contactus'}><p className='font-bold mt-3'>Contact Us</p></Link>
+        <Link to={'/quotepage'}><p className='font-bold mt-3'>Reservations</p></Link>
+        <Link to={'/fleet'}><p className='font-bold mt-3'>Our Fleet</p></Link>
         </div>
 
 
         <div className=''>  
-        <p className='font-bold'>Facebook</p>
-        <p className='font-bold mt-3'>Instagram</p>
-        <p className='font-bold mt-3'>Tiktok</p>
-        <p className='font-bold mt-3'>Twitter</p>
-        <p className='font-bold mt-3'>Youtube</p>
+
+        <div className='flex items-center gap-1'>
+        <img src={facebook} alt='' className='w-4'/><p className='font-bold'>Facebook</p>
+        </div>
+
+
+        <div className='flex items-center gap-1'>
+        <img src={instagram} alt='' className='w-4 mt-4'/><p className='font-bold mt-3'>Instagram</p>
+        </div>
+
+        <div className='flex items-center '>
+        <img src={tiktok} alt='' className='w-4 mt-4' /><p className='font-bold mt-3'>Tiktok</p>
+        </div>
+
+
+        <div className='flex items-center gap-1'>
+        <img src={twitter} alt='' className='w-4 mt-4' /><p className='font-bold mt-3'>Twitter</p>
+        </div>
+
+
+        <div className='flex items-center gap-1'>
+        <img src={youtube} alt='' className='w-4 mt-4' /><p className='font-bold mt-3'>Youtube</p>
+        </div>
 
         </div>
 

@@ -6,7 +6,10 @@ import EventProtocols from '../assets/EventProtocols.jpg'
 const ThirdLayer = () => {
   return (
     <div className='bg-white'>
-    <div className='justify-center'>
+      <div className='flex flex-col items-center'>
+        <button className='text-3xl font-bold border-2 border-blue-500 py-1 text-black px-4 text-center shadow-lg mt-2'>Our Services</button>
+        </div>
+    
     <div className='flex justify-evenly items-center py-16 md:flex-row flex-col gap-y-12 mb-12 mt-16'>
      <div className='flex flex-col items-center'>
     <img src={AirportTransfers} alt='' className='w-[300px] h-[220px] items-center'/>
@@ -27,7 +30,7 @@ const ThirdLayer = () => {
     <p>Whether you're arriving or  departing,<br /> a private airport transfer is the  perfect <br /> way to start or end your journey in style. </p>
     </div>   
     </div>
-    </div>
+ 
 </div>
   )
 }

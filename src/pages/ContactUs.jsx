@@ -6,6 +6,7 @@ import { URL } from "../url"
 import benzinterior from '../assets/benzinterior.jpg'
 // import { UserContext } from "../context/UserContext"
 import Footer from "../components/Footer"
+import Navbar from "../components/Navbar"
 
 
 const ContactUs = () => {
@@ -40,25 +41,28 @@ const ContactUs = () => {
   }
   return (
     <div className="bg-[#FAEFE9]">
-    <div className="flex items-center justify-between px-6 md:px-[200px] py-4 bg-[#FAEFE9]">
-    <h1 className="text-3xl md:text-3xl font-bold"><Link to="/" className="text-black font-Comfortaa">Limo</Link></h1>
+   <Navbar/>
+
+
+
+
    
-    </div>
+
 
 
     <h1 className="text-2xl font-bold text-center text-black mt-6">Contact Us</h1>
-<div className="flex justify-center items-center h-[60vh] ">
+
       
        
-         <div className="flex space-x-12 items-center">
+    <div className="flex md:flex-row flex-col justify-center space-x-12 items-center h-[80vh]">
          <img src={benzinterior} alt="" className="w-[500px] h-[300px] object-cover " />
 
          <div className="">
      
-            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-4">Email</label>
             <input onChange={(e)=>setEmail(e.target.value)} type="text" id="first_name" class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="e.g johndoe@gmail.com" required />
         
-            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-9">Password</label>
+            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-4">Password</label>
             <input onChange={(e)=>setPassword(e.target.value)} type="text" id="first_name" class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="******" required />
         
 
@@ -74,7 +78,7 @@ const ContactUs = () => {
           <p className="text-gray-500 hover:text-black"><Link to="/register">Sign Up</Link></p>
          </div>
         </div>
-        </div>
+
 
 
 

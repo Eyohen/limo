@@ -117,7 +117,7 @@ const Events = () => {
         <button className='text-3xl font-bold border-2 border-purple-400 py-1 text-black px-4 shadow-lg mt-2'>Events in Geneva</button>
         </div>
 
-      <div className='grid grid-cols-2 items-center justify-center px-64 mb-32 gap-y-9'>
+      <div className='grid md:grid-cols-2 grid-cols-1 items-center justify-centerpx-2 md:px-64 mb-32 gap-y-9'>
       {data.map((item, id) => 
         //  <div key={id} class="h-screen grid grid-cols-2 gap-4 content-start items-center px-64 mb-32">
         <div key={id} class="">

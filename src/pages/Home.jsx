@@ -10,6 +10,9 @@ import FourthLayer from '../components/FourthLayer'
 import BenzSClass from '../assets/BenzSClass.jpg'
 import BenzEClass from '../assets/BenzE-Class.jpg'
 import BenzEQS from '../assets/BenzEQS.jpg'
+import firstpic from '../assets/firstpic.jpeg'
+import secondpic from '../assets/secondpic.jpeg'
+import thirdpic from '../assets/thirdpic.jpeg'
 
 const Home = () => {
   return (
@@ -63,21 +66,21 @@ const Home = () => {
         </div>
         <div className='flex items-center md:flex-row flex-col justify-center md:space-x-12 gap-y-6 mb-32 mt-8'>
           <div className='flex flex-col items-center'>
-          <img src={'https://thumbs.dreamstime.com/b/im-happy-my-appearance-studio-shot-beautiful-young-woman-posing-against-grey-background-im-happy-my-appearance-267360746.jpg'} alt='' className='w-[100px] h-[100px] object-cover brightness-75' />
+          <img src={firstpic} alt='' className='w-[100px] h-[100px] object-cover brightness-75' />
           <p className='font-bold mt-3'>Jacob West</p>
           <p className='font-light mt-3'>Limo Geneva is my go to <br /> service whenever im in town and <br /> im always impressed with their <br/> top notch service</p>
           </div>
 
 
           <div className='flex flex-col items-center'>
-          <img src={'https://thumbs.dreamstime.com/b/im-happy-my-appearance-studio-shot-beautiful-young-woman-posing-against-grey-background-im-happy-my-appearance-267360746.jpg'} alt='' className='w-[100px] h-[100px] object-cover brightness-75' />
+          <img src={secondpic} alt='' className='w-[100px] h-[100px] object-cover brightness-75' />
           <p className='font-bold mt-3'>Isaac Adamson</p>
           <p className='font-light mt-3'>Limo Geneva is my go to <br /> service whenever im in town and <br /> im always impressed with their <br/> top notch service</p>
           </div>
 
 
           <div className='flex flex-col items-center'>
-          <img src={'https://thumbs.dreamstime.com/b/im-happy-my-appearance-studio-shot-beautiful-young-woman-posing-against-grey-background-im-happy-my-appearance-267360746.jpg'} alt='' className='w-[100px] h-[100px] object-cover brightness-75' />
+          <img src={thirdpic} alt='' className='w-[100px] h-[100px] object-cover brightness-75' />
           <p className='font-bold mt-3'>Austin Okocha</p>
           <p className='font-light mt-3'>Limo Geneva is my go to <br /> service whenever im in town and <br /> im always impressed with their <br/> top notch service</p>
           </div>

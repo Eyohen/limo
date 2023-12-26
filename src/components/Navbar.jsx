@@ -14,31 +14,49 @@ const Navbar = () => {
     const toggleModal = () => {
         setModal(!modal)
     }
- 
+
+  
 
   return (
-    <div className='h-25 items-center bg-[#FAEFE9] '>
+    <div className='h-25 items-center bg-[#FAEFE9] z-20 w-full'>
     <div className='flex justify-between p-2 px-6 items-center'>
    {/* <Link to={'/'}> <p className='text-gray-400 font-bold text-3xl'>Limo Geneva Sarl</p></Link> */}
    <Link to={'/'}><img src={Nudelogo} alt="" className="w-24 h-18 object-cover" /></Link>
 
-   <Link to={'/'}> <p className=' text-lg'>French</p></Link>
-   <Link to={'/'}> <p className='bg-gray-400  text-white text-lg px-10 py-2'>English</p></Link>
+   <div className="flex gap-9 items-center">
+   <Link to={'/'}> <p className='hidden md:block text-lg '>French</p></Link>
+   <Link to={'/'}> <p className='hidden md:block bg-gray-400  text-white text-lg px-10 py-2'>English</p></Link>
+   </div>
 
   
-    <Link to="/about"><p className='hidden md:block text-black text-lg font-medium hover:text-white hover:bg-black px-2 ' >About us</p></Link>
+    
     {/* <Link to={user?'/findapartment':"/clientlogin" }><p className='text-green-700 text-lg font-medium hover:bg-green-800 hover:text-white hover:rounded-full hover:px-1.5'>Find your Apartment</p></Link> */}
-    <Link to={'/quotepage'}><p className='hidden md:block text-lg font-medium border border-orange-500 px-3 py-2 hover:bg-black hover:text-white '>Reservation</p></Link>
+    <Link to={'/quotepage'}><p className='hidden md:block text-lg font-medium border border-[#BA8565] px-3 py-2 hover:bg-black hover:text-white '>Reservation</p></Link>
     {/* <Link to="/events"><p className='hidden md:block text-black text-lg font-medium hover:bg-white hover:rounded-full hover:border-2 hover:border-black hover:px-1.5 '>Events</p></Link> */}
     {/* <Link to="/communities"><p className='hidden md:block text-black text-lg font-medium hover:bg-white hover:rounded-full hover:border-2 hover:border-black hover:px-1.5 '>Testimonials</p></Link> */}
     <Link to={'/login'}><p className='hidden md:block  text-lg font-medium hover:bg-black  hover:text-white px-2'>Login</p></Link>
-    <Link to={'/'}><HiBars3 onClick={toggleModal}  size={30}/></Link>
+  <HiBars3 onClick={toggleModal}  size={30}/>
     {/* <Link to="/communities"><p className='hidden md:block text-black text-lg font-medium hover:bg-white hover:rounded-full hover:border-2 hover:border-black hover:px-1.5 '>Reservations</p></Link> */}
 
    
     {modal && (
-        <div className="bg-white h-screen absolute ml-[1310px] w-[350px] mt-[800px]">
-            <p>Hello</p>
+        <div className="bg-white h-screen absolute right-0 top-24 pt-10 w-[350px] z-40">
+          <div className="items-center justify-center flex flex-col gap-y-6">
+            <Link to={'/aboutus'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">About Us</p></Link>
+            <Link to={'/services'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Services</p></Link>
+            <Link to={'/testimonials'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Testimonials</p></Link>
+            <Link to={'/events'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Events</p></Link>
+            <Link to={'/quotepage'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Reservations</p></Link>
+            <Link to={'/fleet'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Our Fleet</p></Link>
+
+            <Link to={''}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">Your Activity</p></Link>
+            <Link to={'/login'}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">Login/out</p></Link>
+            <Link to={'/register'}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">Sign-in/Up</p></Link>
+            {/* <Link to={}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">History</p></Link> */}
+
+
+            
+            </div>
           {/* <div onClick={toggleModal} className=""></div>
           <div className="modal-content rounded-xl">
             <p className='text-center text-2xl text-green-700'>Apartment A</p>
@@ -61,6 +79,7 @@ const Navbar = () => {
           */}
         </div>
       )} 
+
 
 
     

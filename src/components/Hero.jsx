@@ -1,24 +1,35 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {BsChevronCompactLeft,BsChevronCompactRight} from 'react-icons/bs'
 import {RxDotFilled} from 'react-icons/rx'
-import HeroSection5 from '../assets/HeroSection5.jpg'
-import HeroSection6 from '../assets/HeroSection6.jpg'
-import HeroSection7 from '../assets/HeroSection7.jpg'
+import Hero1 from '../assets/Hero1.png'
+import Hero2 from '../assets/Hero2.jpg'
+import Hero3 from '../assets/HeroSection7.jpg'
 
 const Hero = () => {
     // const reducedBrightness = 0.5;
+const [timer, setTimer] = useState(null)
+
     const slides = [
       {
-        url: `${HeroSection6}`,
-        text: 'Your best ride around Geneva'
+        url: `${Hero1}`,
+        text: 'Your best ride around Geneva',
+        textColor: 'text-[#BA8565]',
+        textLocation: '',
+        backgroundColor:'#040308'
       },
       {
-        url: `${HeroSection5}`,
-        text:'Visit exotic destinations throughout Switzerland'
+        url: `${Hero2}`,
+        text:'Visit exotic destinations throughout Switzerland',
+        textColor: 'text-[black]',
+        textLocation: '',
+        backgroundColor: 'bg-gradient-to-r from-[#3A3A3A]-500'
       },
       {
-        url: `${HeroSection7}`,
-        text:'We cover Switzerland, France and Italy'
+        url: `${Hero3}`,
+        text:'We cover Switzerland, France and Italy',
+        textColor: 'text-[white]',
+        textLocation: '',
+        backgroundColor: 'bg-gradient-to-r from-[#3A3A3A]-500'
       }
     ];
 
@@ -40,6 +51,22 @@ const Hero = () => {
       setCurrentIndex(slideIndex);
     }
 
+
+
+    useEffect(() => {
+      const anotherOne = setInterval(() => {
+        // if(currentIndex == slides.length - 1 ) goToSlide(0)
+
+        setCurrentIndex(prevState => prevState === slides.length - 1 ? 0 : prevState + 1)
+        console.log('something')
+      }, 2000)
+      setTimer(anotherOne)
+        return () => {
+          clearInterval(anotherOne)
+          clearInterval(timer)
+          setTimer(null)}
+    },[])
+
   return (
     // <div className='p-16'>
     //     <div style={{
@@ -53,10 +80,10 @@ const Hero = () => {
 
     //     </div>
     // </div>
-    <div className='w-full h-[680px]  m-auto py-16 px-4 relative bg-[#040308]'>
-      <div style={{backgroundImage:`url(${slides[currentIndex].url})`}} className='w-full h-full rounded-2xl bg-center bg-cover duration-500 brightness-75 flex justify-center items-center'>
+    <div className='w-full h-[780px]  m-auto relative '>
+      <div style={{backgroundImage:`url(${slides[currentIndex].url})`}} className='w-full h-full  bg-center bg-cover duration-500 brightness-75 flex justify-center items-center'>
         {/* <p className='text-[#BA8565] text-5xl justify-center text-center font-bold '>{slides[currentIndex].text}</p> */}
-        <p className='text-white text-5xl font-light pt-[370px] mr-[800px]  '>{slides[currentIndex].text}</p>
+        <p className={`${slides[currentIndex].textColor} text-5xl font-light pt-[370px] md:mr-[800px]`   }>{slides[currentIndex].text}</p>
 
       </div>
       <div className='absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer '>
@@ -65,7 +92,7 @@ const Hero = () => {
       <div className='absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer '>
         <BsChevronCompactRight onClick={nextSlide} size={25}/>
       </div>
-      <div className='flex top-4 items-center  justify-center py-2 gap-4'>
+      <div className='flex items-center justify-center mb-6 gap-4'>
         {slides.map((slide, slideIndex) => (
           <div key={slideIndex} onClick={() => goToSlide(slideIndex)} className='text-2xl cursor-pointer'>
             <RxDotFilled color='white' size={30} />

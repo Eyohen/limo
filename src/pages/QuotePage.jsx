@@ -2,6 +2,9 @@ import React, {useState} from 'react'
 import DatePicker from "react-datepicker";
 import axios from "axios"
 import { URL } from '../url';
+import Navbar from "../components/Navbar"
+import benzinterior from '../assets/benzinterior.jpg'
+import Footer from "../components/Footer"
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -65,37 +68,53 @@ const QuotePage = () => {
     } 
     
   return (
-    <div>
-        <p className='text-center font-bold text-xl mt-6'>Make a Booking</p>
+    <div className="bg-[#FAEFE9]">
+          <Navbar/>
+       
+        <h1 className="text-2xl font-bold text-center text-black mt-9">Make a Reservation</h1>
 
+      
+<div className="flex md:flex-row flex-col justify-center space-x-12 items-center">
+         <img src={benzinterior} alt="" className="w-[500px] h-[350px] object-cover " />
+
+
+         <div className="">
         <form>
         <div className='items-center justify-center flex flex-col mt-32 space-y-8'>
-        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvJOs1sokvlIva3YiCCDBNiSZS-wV2ThkCse8csaVyjA&s' className='w-[280px] h-[250px]'/>
-        <input onChange={(e)=>setPickUp(e.target.value)} className='border w-[270px] md:w-[550px] px-3 text-black' placeholder='Enter pick up Location'/>
-        <input onChange={(e)=>setArrival(e.target.value)} className='border w-[270px] md:w-[550px] px-3' placeholder='Enter Arrival Location'/>
-        <input onChange={(e)=>setTime(e.target.value)} className='border w-[270px] md:w-[550px] px-3' placeholder='Enter Time'/>
+
+        <input onChange={(e)=>setPickUp(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Enter pick up Location'/>
+        <input onChange={(e)=>setArrival(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Enter Arrival Location'/>
+        <input onChange={(e)=>setTime(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Enter Time'/>
         {/* <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} className='border mr-[90px] md:mr-[370px]' /> */}
-        <input onChange={(e)=>setVehicle(e.target.value)} className='border w-[270px] md:w-[550px] px-3' placeholder='Enter Type of Vehicle'/>
-        <input onChange={(e)=>setPassengers(e.target.value)} className='border w-[270px] md:w-[550px] px-3' placeholder='Enter Number of passengers'/>
-        <input onChange={(e)=>setAirport(e.target.value)} className='border w-[270px] md:w-[550px] px-3' placeholder='Enter Airport Name (optional)'/>
-        <input onChange={(e)=>setFlightNum(e.target.value)} className='border w-[270px] md:w-[550px] px-3' placeholder='Enter flight number (optional)'/>
+        <input onChange={(e)=>setVehicle(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Enter Type of Vehicle'/>
+        <input onChange={(e)=>setPassengers(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Enter Number of passengers'/>
+        <input onChange={(e)=>setAirport(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Enter Airport Name (optional)'/>
+        <input onChange={(e)=>setFlightNum(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Enter flight number (optional)'/>
         <button onClick={CreateReservation} className='bg-black text-white px-12 py-2 mt-8 rounded-md mb-8'>Submit</button>
         {good && <h3 className="text-green-500 text-lg ">Request Created Successfully</h3>}
 </div>
 </form>
 
-<div className='mb-64'>
 
 </div>
+</div>
+
+<div className='mb-16'>
+
+
 
 
      
        
   
 
-
+</div>
+<Footer/>
     </div>
   )
 }
 
 export default QuotePage
+
+
+
