@@ -19,7 +19,7 @@ const [timer, setTimer] = useState(null)
       },
       {
         url: `${Hero2}`,
-        text:'Visit exotic destinations throughout Switzerland',
+        text:`Visit exotic destinations throughout Switzerland`,
         textColor: 'text-[black]',
         textLocation: '',
         backgroundColor: 'bg-gradient-to-r from-[#3A3A3A]-500'
@@ -59,7 +59,7 @@ const [timer, setTimer] = useState(null)
 
         setCurrentIndex(prevState => prevState === slides.length - 1 ? 0 : prevState + 1)
         console.log('something')
-      }, 2000)
+      }, 4000)
       setTimer(anotherOne)
         return () => {
           clearInterval(anotherOne)
@@ -83,7 +83,7 @@ const [timer, setTimer] = useState(null)
     <div className='w-full h-[780px]  m-auto relative '>
       <div style={{backgroundImage:`url(${slides[currentIndex].url})`}} className='w-full h-full  bg-center bg-cover duration-500 brightness-75 flex justify-center items-center'>
         {/* <p className='text-[#BA8565] text-5xl justify-center text-center font-bold '>{slides[currentIndex].text}</p> */}
-        <p className={`${slides[currentIndex].textColor} text-5xl font-light pt-[370px] md:mr-[800px]`   }>{slides[currentIndex].text}</p>
+        <p className={`${slides[currentIndex].textColor} text-4xl  pt-[370px] ml-6 mt-[170px]`   }>{slides[currentIndex].text}</p>
 
       </div>
       <div className='absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer '>

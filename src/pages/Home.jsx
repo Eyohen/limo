@@ -32,7 +32,7 @@ const Home = () => {
         <div className='flex items-center md:flex-row flex-col justify-center md:space-x-32 gap-y-6 mb-12 mt-16 bg-[#CFD9E6]'>
       
           <Link to={'/quotepage'}><div>
-          <img src={BenzSClass} alt='' className='w-[200px] h-[200px] object-cover rounded-tl-[70px] brightness-75' />
+          <img src={BenzSClass} alt='' className='w-[200px] h-[200px] object-cover  md:rounded-tl-[70px] brightness-75' />
           <p className='text-center font-bold mt-3'>Mercedez Benz S-Class</p>
           <p className='text-center font-bold bg-white border-2 border-gray-400 hover:bg-black hover:text-white mt-3'>Book Now</p>
           </div>
@@ -48,7 +48,7 @@ const Home = () => {
       
 
           <Link to={'/quotepage'}><div>
-          <img src={BenzEQS} alt='' className='w-[200px] h-[200px] object-cover rounded-tr-[70px] brightness-75' />
+          <img src={BenzEQS} alt='' className='w-[200px] h-[200px] object-cover md:rounded-tr-[70px] brightness-75' />
           <p className='text-center font-bold mt-3'>Mercedez Benz EQS</p>
           <p className='text-center font-bold bg-white border-2 border-gray-400 hover:bg-black hover:text-white mt-3'>Book Now</p>
           </div>
