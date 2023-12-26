@@ -7,10 +7,10 @@ const AboutUs = () => {
   return (
     <div className='bg-[#FAEFE9] '>
         <Navbar/>
-        <div className='py-16 px-[280px]'>
+        <div className='mt-12 items-center justify-center mx-auto flex flex-col'>
         <button className='text-3xl font-bold border-2 border-purple-400 py-1 text-black px-4 shadow-lg mt-2'>About Us</button>
         </div>
-        <div className='flex justify-center items-center gap-10 mb-32'>
+        <div className='flex flex-col md:flex-row justify-center items-center gap-10 mb-32 mt-12'>
             <div>
                 <p className='text-xl'>We are a team of experienced chauffeurs, based in Geneva, <br/>
                 Switzerlad where we provide luxury travel since 2014.

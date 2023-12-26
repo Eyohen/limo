@@ -43,11 +43,11 @@ const Navbar = () => {
         <div className="bg-white h-screen absolute right-0 top-24 pt-10 w-[350px] z-40">
           <div className="items-center justify-center flex flex-col gap-y-6">
             <Link to={'/aboutus'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">About Us</p></Link>
-            <Link to={'/services'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Services</p></Link>
-            <Link to={'/testimonials'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Testimonials</p></Link>
+            <Link to={'/'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Services</p></Link>
+            <Link to={'/'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Testimonials</p></Link>
             <Link to={'/events'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Events</p></Link>
             <Link to={'/quotepage'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Reservations</p></Link>
-            <Link to={'/fleet'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Our Fleet</p></Link>
+            <Link to={'/'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Our Fleet</p></Link>
 
             <Link to={''}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">Your Activity</p></Link>
             <Link to={'/login'}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">Login/out</p></Link>
