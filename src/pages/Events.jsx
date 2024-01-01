@@ -35,15 +35,24 @@ const data = [
 
 const EventTile = ({item}) => {
   return (
-    <div className=' w-[480px] flex flex-col items-center'>
-    <img src={Aboutus} alt='' className='w-[480px] h-[230px] object-cover'/>
-    <p className='font-bold text-xl'>Geneva Motor Show</p>
-    <p className=' text-lg'>planning to attend the geneva motor <br /> show, coming up between 26 <br /> february to 3rd March 2023? Talk to <br /> us lets help you arrange the logistics </p>
+    <div className=' w-[480px] flex flex-col items-center text-center '>
+    <img src={Aboutus} alt='' className='w-[480px] h-[230px] object-cover items-center'/>
+    <div>
+    <p className='font-bold text-xl mt-2 '>Geneva Motor Show</p>
+    <p className='text-lg mt-2'>planning to attend the geneva motor <br /> show, coming up between 26 <br /> february to 3rd March 2023? Talk to <br /> us lets help you arrange the logistics </p>
+    </div>
+
     <button className='border-2 bg-white px-2 py-1 mt-2'>Book Now</button>
   </div>
 
   )
 }
+
+{/* <div className='flex flex-col items-center'>
+<img src={AirportTransfers} alt='' className='w-[300px] h-[220px] object-cover items-center'/>
+<p className='font-bold text-xl text-center mt-2'>Airport Transfers</p>
+<p>Whether you're arriving or  departing,<br /> a private airport transfer is the  perfect <br /> way to start or end your journey in style. </p>
+</div>    */}
 
 
 
@@ -121,7 +130,7 @@ const Events = () => {
 {/* </div> */}
 
 
-      <div className='grid md:grid-cols-2 grid-cols-1 items-center justify-center px-2 md:px-64 mb-32 gap-y-9'>
+      <div className='grid md:grid-cols-2 grid-cols-1 items-center justify-center md:px-64 mb-32 gap-y-9'>
       {data.map((item, id) => 
         //  <div key={id} class="h-screen grid grid-cols-2 gap-4 content-start items-center px-64 mb-32">
         <div key={id} class="">
