@@ -98,7 +98,7 @@ const [timer, setTimer] = useState(null)
       <div className='absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer '>
         <BsChevronCompactRight onClick={nextSlide} size={25}/>
       </div>
-      <div className='flex items-center justify-center gap-4 absolute top-[95%] md:-translate-x-[-600%] -translate-x-[-200%]'>
+      <div className='flex items-center justify-center gap-4 absolute top-[95%] md:-translate-x-[-600%] -translate-x-[-150%]'>
         {slides.map((slide, slideIndex) => (
           <div key={slideIndex} onClick={() => goToSlide(slideIndex)} className='text-2xl cursor-pointer'>
             <RxDotFilled color='white' size={30} />
