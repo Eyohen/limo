@@ -7,7 +7,7 @@ const ThirdLayer = () => {
   return (
     <div className='bg-white'>
       <div className='flex flex-col items-center'>
-        <button className='text-3xl font-bold border-2 border-blue-500 py-1 text-black px-4 text-center shadow-lg mt-2'>Our Services</button>
+        <button className='text-3xl font-bold border-2 border-blue-500 py-1 text-black px-4 rounded-tl-lg rounded-br-lg shadow-xl text-center mt-2'>Our Services</button>
         </div>
     
     <div className='flex justify-evenly items-center py-16 md:flex-row flex-col gap-y-12 mb-12 mt-16'>

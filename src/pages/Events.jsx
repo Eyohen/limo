@@ -113,11 +113,15 @@ const Events = () => {
     <div className='w-full bg-[#FAEFE9]'>
        <Navbar/>
 
-       <div className='py-16 px-[260px]'>
-        <button className='text-3xl font-bold border-2 border-purple-400 py-1 text-black px-4 shadow-lg mt-2'>Events in Geneva</button>
-        </div>
+       {/* <div className='py-16 px-[260px]'> */}
 
-      <div className='grid md:grid-cols-2 grid-cols-1 items-center justify-centerpx-2 md:px-64 mb-32 gap-y-9'>
+       <div className='mt-12 items-center justify-center flex flex-col py-16'>
+        <button className='text-3xl font-bold border-2 border-purple-400 py-1 text-black px-4 rounded-tl-lg rounded-br-lg shadow-xl mt-2'>Events in Geneva</button>
+        </div>
+{/* </div> */}
+
+
+      <div className='grid md:grid-cols-2 grid-cols-1 items-center justify-center px-2 md:px-64 mb-32 gap-y-9'>
       {data.map((item, id) => 
         //  <div key={id} class="h-screen grid grid-cols-2 gap-4 content-start items-center px-64 mb-32">
         <div key={id} class="">

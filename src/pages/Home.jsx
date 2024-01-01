@@ -26,7 +26,7 @@ const Home = () => {
 <div className='bg-[#CFD9E6] py-1'>
 
 <div className='flex flex-col items-center'>
-        <button className='text-3xl font-bold border-2 border-blue-500 py-1 text-black px-4 text-center shadow-lg mt-2'>Our Fleet</button>
+        <button className='text-3xl font-bold border-2 border-blue-500 py-1 text-black px-4 rounded-tl-lg rounded-br-lg shadow-xl text-center shadow-lg mt-2'>Our Fleet</button>
         </div>
    
         <div className='flex items-center md:flex-row flex-col justify-center md:space-x-32 gap-y-6 mb-12 mt-16 bg-[#CFD9E6]'>
@@ -62,7 +62,7 @@ const Home = () => {
 
         <div className='bg-[#FAEFE9] py-1'>
           <div className='flex flex-col items-center'>
-        <button className='text-3xl font-bold border-2 border-orange-500 py-1 text-black px-4 text-center shadow-lg mt-2'>Happy Clients</button>
+        <button className='text-3xl font-bold border-2 border-orange-500 py-1 text-black px-4 rounded-tl-lg rounded-br-lg shadow-xl text-center shadow-lg mt-2'>Happy Clients</button>
         </div>
         <div className='flex items-center md:flex-row flex-col justify-center md:space-x-12 gap-y-6 mb-32 mt-8'>
           <div className='flex flex-col items-center'>

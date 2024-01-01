@@ -43,17 +43,9 @@ const ContactUs = () => {
     <div className="bg-[#FAEFE9]">
    <Navbar/>
 
-
-
-
-   
-
-
-
     <h1 className="text-2xl font-bold text-center text-black mt-6">Contact Us</h1>
 
-      
-       
+    
     <div className="flex md:flex-row flex-col justify-center space-x-12 items-center h-[80vh]">
          <img src={benzinterior} alt="" className="w-[500px] h-[300px] object-cover " />
 
@@ -78,9 +70,6 @@ const ContactUs = () => {
           <p className="text-gray-500 hover:text-black"><Link to="/register">Sign Up</Link></p>
          </div>
         </div>
-
-
-
 
     </div>
     <Footer/>

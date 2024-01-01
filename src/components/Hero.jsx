@@ -26,7 +26,7 @@ const [timer, setTimer] = useState(null)
       },
       {
         url: `${Hero3}`,
-        text:'We cover Switzerland, France and Italy',
+        text:'We cover Switzerland, France and Italy',
         textColor: 'text-[white]',
         textLocation: '',
         backgroundColor: 'bg-gradient-to-r from-[#3A3A3A]-500'
@@ -58,7 +58,7 @@ const [timer, setTimer] = useState(null)
         // if(currentIndex == slides.length - 1 ) goToSlide(0)
 
         setCurrentIndex(prevState => prevState === slides.length - 1 ? 0 : prevState + 1)
-        console.log('something')
+
       }, 9000)
       setTimer(anotherOne)
         return () => {
@@ -80,19 +80,25 @@ const [timer, setTimer] = useState(null)
 
     //     </div>
     // </div>
-    <div className='w-full h-[780px]  m-auto relative '>
-      <div style={{backgroundImage:`url(${slides[currentIndex].url})`}} className='w-full h-full  bg-center bg-cover duration-500 brightness-75 flex justify-center items-center'>
-        {/* <p className='text-[#BA8565] text-5xl justify-center text-center font-bold '>{slides[currentIndex].text}</p> */}
-        <p className={`${slides[currentIndex].textColor} text-4xl  pt-[370px] ml-6 mt-[170px]`   }>{slides[currentIndex].text}</p>
+    <div className='w-full h-[780px]  m-auto relative bg- '>
 
+      <div className=' bg-gray-100 w-full h-full flex justify-center items-center'>
+      {slides?.map((item, index)=><div style={{backgroundImage:`url(${item.url})`}} className={`w-full h-full  bg-center bg-cover duration-500 brightness-75 flex justify-center items-center ${index === currentIndex ? '': ''} ${index === currentIndex ? 'animate-fadeIn': ' opacity-0 hidden'}`}>
+        {/* <p className='text-[#BA8565] text-5xl justify-center text-center font-bold '>{slides[currentIndex].text}</p> */}
+        <p className={`${item.textColor} text-4xl  pt-[370px] ml-6 mt-[170px]`   }>{item.text}</p>
+
+        
+
+      </div>)}
       </div>
+      
       <div className='absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer '>
         <BsChevronCompactLeft onClick={prevSlide} size={25}/>
       </div>
       <div className='absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer '>
         <BsChevronCompactRight onClick={nextSlide} size={25}/>
       </div>
-      <div className='flex items-center justify-center mb-6 gap-4'>
+      <div className='flex items-center justify-center gap-4 absolute top-[95%] md:-translate-x-[-600%] -translate-x-[-200%]'>
         {slides.map((slide, slideIndex) => (
           <div key={slideIndex} onClick={() => goToSlide(slideIndex)} className='text-2xl cursor-pointer'>
             <RxDotFilled color='white' size={30} />
