@@ -12,7 +12,7 @@ const FourthLayer = () => {
     }} className='w-full h-[300px] rounded-tl-lg bg-center bg-cover duration-500 justify-center items-center'>
 
         <div className='items-center mx-auto flex flex-col'>
-<p className='font-bold text-4xl mt-4'>The epitome of refined travel</p>
+<p className='font-bold text-4xl mt-4 px-4 text-center'>The epitome of refined travel</p>
 <p className='text-xl mt-2'>If time is a luxury,</p>
 <p className='text-xl'>travel is the ultimate indulgence</p>
 <p className='text-xl mt-2'>It's more than gong from A to B.</p>
