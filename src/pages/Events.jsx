@@ -35,8 +35,8 @@ const data = [
 
 const EventTile = ({item}) => {
   return (
-    <div className=' w-[480px] flex flex-col items-center text-center '>
-    <img src={Aboutus} alt='' className='w-[480px] h-[230px] object-cover items-center'/>
+    <div className='flex flex-col items-center text-center '>
+    <img src={Aboutus} alt='' className='w-[400px] h-[230px] object-cover items-center'/>
     <div>
     <p className='font-bold text-xl mt-2 '>Geneva Motor Show</p>
     <p className='text-lg mt-2'>planning to attend the geneva motor <br /> show, coming up between 26 <br /> february to 3rd March 2023? Talk to <br /> us lets help you arrange the logistics </p>
