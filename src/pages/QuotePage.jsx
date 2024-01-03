@@ -74,15 +74,15 @@ const QuotePage = () => {
         <h1 className="text-2xl font-bold text-center text-black mt-9">Make a Reservation</h1>
 
       
-<div className="flex md:flex-row flex-col space-x-12 mx-auto justify-center items-center">
+<div className="flex md:flex-row flex-col md:space-x-12 mx-auto justify-center items-center">
          <img src={benzinterior} alt="" className="w-[500px] h-[350px] object-cover items-center" />
 
 {/* 
          <div className=""> */}
         <form>
-        <div className='flex flex-col mt-32 space-y-8'>
+        <div className='flex flex-col mt-32 space-y-8 items-center '>
 
-        <input onChange={(e)=>setPickUp(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-64 md:w-[350px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Enter pick up Location'/>
+        <input onChange={(e)=>setPickUp(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-64 md:w-[350px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 items-center" placeholder='Enter pick up Location'/>
         <input onChange={(e)=>setArrival(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Enter Arrival Location'/>
         <input onChange={(e)=>setTime(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Enter Time'/>
         {/* <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} className='border mr-[90px] md:mr-[370px]' /> */}
