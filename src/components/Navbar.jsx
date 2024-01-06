@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 // import { UserContext } from "../context/UserContext"
 import axios from "axios"
 // import { IF, URL } from "../url"
-import Nudelogo from '../assets/NudeLogo.png'
+import Nudelogo from '../assets/limobrown.jpg'
 import { HiBars3 } from "react-icons/hi2";
+import { IoMdClose } from "react-icons/io";
 
 
 const Navbar = () => {
@@ -35,7 +36,8 @@ const Navbar = () => {
     {/* <Link to="/events"><p className='hidden md:block text-black text-lg font-medium hover:bg-white hover:rounded-full hover:border-2 hover:border-black hover:px-1.5 '>Events</p></Link> */}
     {/* <Link to="/communities"><p className='hidden md:block text-black text-lg font-medium hover:bg-white hover:rounded-full hover:border-2 hover:border-black hover:px-1.5 '>Testimonials</p></Link> */}
     <Link to={'/login'}><p className='hidden md:block  text-lg font-medium hover:bg-black  hover:text-white px-2'>Login</p></Link>
-  <HiBars3 onClick={toggleModal}  size={30}/>
+
+    {modal ? (<IoMdClose onClick={toggleModal} size={30} />) : (<HiBars3 onClick={toggleModal}  size={30} />)}
     {/* <Link to="/communities"><p className='hidden md:block text-black text-lg font-medium hover:bg-white hover:rounded-full hover:border-2 hover:border-black hover:px-1.5 '>Reservations</p></Link> */}
 
    
@@ -47,6 +49,7 @@ const Navbar = () => {
             <Link to={'/'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Testimonials</p></Link>
             <Link to={'/events'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Events</p></Link>
             <Link to={'/quotepage'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Reservations</p></Link>
+            <Link to={'/contactus'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Contact Us</p></Link>
             <Link to={'/'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Our Fleet</p></Link>
 
             <Link to={''}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">Your Activity</p></Link>

@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 // import { UserContext } from "../context/UserContext"
 import axios from "axios";
 // import { IF, URL } from "../url"
-import Blacklogo from "../assets/BlackLogo.png";
+import Blacklogo from "../assets/logoremove.png";
 import { HiBars3 } from "react-icons/hi2";
+import { IoMdClose } from "react-icons/io";
 
 const BlackNavbar = () => {
   const [modal, setModal] = useState(false);
@@ -36,7 +37,7 @@ const BlackNavbar = () => {
       <div className="flex justify-between p-2 px-6 items-center">
         {/* <Link to={'/'}> <p className='text-gray-400 font-bold text-3xl'>Limo Geneva Sarl</p></Link> */}
         <Link to={"/"}>
-          <img src={Blacklogo} alt="" className=" w-14 object-cover" />
+          <img src={Blacklogo} alt="" className=" w-18 h-10 object-cover" />
         </Link>
 
         <div className="flex gap-9 items-center">
@@ -65,14 +66,16 @@ const BlackNavbar = () => {
             Login
           </p>
         </Link>
-        <Link to={"/"}>
-          <HiBars3 onClick={toggleModal} color="white" size={30} />
-        </Link>
+        
+        {modal ? (   <IoMdClose onClick={toggleModal} color="white" size={30} />) : (  <HiBars3 onClick={toggleModal} color="white" size={30} />) }
+        
+        
         {/* <Link to="/communities"><p className='hidden md:block text-black text-lg font-medium hover:bg-white hover:rounded-full hover:border-2 hover:border-black hover:px-1.5 '>Reservations</p></Link> */}
 
         {modal && (
           <div className="bg-white h-screen absolute right-0 top-24 pt-10  w-[350px]  z-40">
             <div className="items-center justify-center flex flex-col gap-y-6">
+    
               <Link to={"/aboutus"}>
                 <p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">
                   About Us

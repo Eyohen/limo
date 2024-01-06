@@ -19,7 +19,7 @@ const [timer, setTimer] = useState(null)
       },
       {
         url: `${Hero2}`,
-        text:`Visit exotic destinations throughout Switzerland`,
+        text:`Visit exotic destination throughout Switzerland`,
         textColor: 'text-[black]',
         textLocation: '',
         backgroundColor: 'bg-gradient-to-r from-[#3A3A3A]-500'
@@ -59,7 +59,7 @@ const [timer, setTimer] = useState(null)
 
         setCurrentIndex(prevState => prevState === slides.length - 1 ? 0 : prevState + 1)
 
-      }, 9000)
+      },300000)
       setTimer(anotherOne)
         return () => {
           clearInterval(anotherOne)
@@ -82,10 +82,10 @@ const [timer, setTimer] = useState(null)
     // </div>
     <div className='w-full h-[780px]  m-auto relative bg- '>
 
-      <div className=' bg-gray-100 w-full h-full flex justify-center items-center'>
-      {slides?.map((item, index)=><div style={{backgroundImage:`url(${item.url})`}} className={`w-full h-full  bg-center bg-cover duration-500 brightness-75 flex justify-center items-center ${index === currentIndex ? '': ''} ${index === currentIndex ? 'animate-fadeIn': ' opacity-0 hidden'}`}>
+      <div className=' bg-gray-100 w-full h-full flex justify-center items-center '>
+      {slides?.map((item, index)=><div style={{backgroundImage:`url(${item.url})`}} className={`w-full h-full relative bg-center bg-cover duration-500 brightness-75 flex justify-center items-center ${index === currentIndex ? '': ''} ${index === currentIndex ? 'animate-fadeIn': ' opacity-0 hidden'}`}>
         {/* <p className='text-[#BA8565] text-5xl justify-center text-center font-bold '>{slides[currentIndex].text}</p> */}
-        <p className={`${item.textColor} text-4xl  pt-[370px] ml-6 mt-[170px]`   }>{item.text}</p>
+        <p className={`${item.textColor} max-w-[500px] bottom-10 right-10 absolute text-4xl md:text-7xl font-light  pt-[370px] ml-[500px] mt-[170px] md:mt-[50px]` }>{item.text}</p>
 
         
 

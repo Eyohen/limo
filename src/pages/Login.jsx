@@ -44,19 +44,20 @@ const Login = () => {
    <Navbar/>
 
 
-    <h1 className="text-2xl font-bold text-center text-black mt-6">Sign In Form</h1>
+    <h1 className="text-2xl font-bold text-center text-black mt-6">Sign In</h1>
 
       
-    <div className="flex md:flex-row flex-col justify-center space-x-12 items-center h-[80vh]">
-         <img src={benzinterior} alt="" className="w-[500px] h-[300px] object-cover " />
+    <div className="flex md:flex-row flex-col justify-center mx-auto md:space-x-12 items-center mt-6">
+         <img src={benzinterior} alt="" className="w-[500px] h-[300px] object-cover items-center" />
 
-         <div className="mt-6">
-     
-            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-            <input onChange={(e)=>setEmail(e.target.value)} type="text" id="first_name" class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="e.g johndoe@gmail.com" required />
+
+        <form>
+         <div className="flex flex-col mt-8 space-y-2 items-center ">
+            <label for="first_name" class="block md:mr-[300px] mr-[210px]">Email</label>
+            <input onChange={(e)=>setEmail(e.target.value)} type="text" id="first_name" class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg block w-64 md:w-[350px] p-2.5" placeholder="e.g johndoe@gmail.com" required />
         
-            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-9">Password</label>
-            <input onChange={(e)=>setPassword(e.target.value)} type="text" id="first_name" class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="******" required />
+            <label for="password" class="block md:mr-[270px] mr-[180px]">Password</label>
+            <input onChange={(e)=>setPassword(e.target.value)} type="text" id="first_name" class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg block w-64 md:w-[350px] p-2.5 " placeholder="******" required />
         
 
           {/* <label >Enter Email</label>
@@ -71,11 +72,14 @@ const Login = () => {
           <p className="text-gray-500 hover:text-black"><Link to="/register">Sign Up</Link></p>
          </div>
         </div>
+
+        </form>
      
 
 
 
     </div>
+    <div className='mb-32'></div>
     <Footer/>
     </div>
     

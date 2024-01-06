@@ -130,7 +130,7 @@ const Events = () => {
 {/* </div> */}
 
 
-      <div className='grid md:grid-cols-2 grid-cols-1 items-center justify-center px-4 md:px-64 mb-32 gap-y-9'>
+      <div className='grid md:grid-cols-2 md:gap-x-24 grid-cols-1 items-center justify-center px-4 md:px-64 mb-32 gap-y-9'>
       {data.map((item, id) => 
         //  <div key={id} class="h-screen grid grid-cols-2 gap-4 content-start items-center px-64 mb-32">
         <div key={id} class="">
