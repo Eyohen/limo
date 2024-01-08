@@ -76,7 +76,8 @@ const ReservationDetail = () => {
         </Link>
         </div>
         <p className='text-center font-bold text-xl mt-6'>Reservation Details</p>
-        <p className='text-center font-bold text-xl mt-6'> User: {reserves?.user?.firstName}</p>
+        <p className='text-center font-bold text-xl mt-6'> Name: {reserves?.user?.firstName}</p>
+        <p className='text-center font-bold text-xl mt-6'> Email: {reserves?.user?.email}</p>
 
             <div className='flex flex-col mx-auto items-center justify-center mt-16 space-y-4'>
             <p className='bg-[#FAEFE9] font-bold rounded-lg border border-gray-300 px-6 py-2'>Pick Up Location: {reserves.pickUp}</p>
