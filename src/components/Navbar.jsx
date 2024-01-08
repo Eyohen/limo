@@ -1,21 +1,57 @@
 import React,{ useContext, useEffect, useState } from "react"
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 // import { UserContext } from "../context/UserContext"
 import axios from "axios"
-// import { IF, URL } from "../url"
+import { IF, URL } from "../url"
 import Nudelogo from '../assets/limobrown.jpg'
 import { HiBars3 } from "react-icons/hi2";
 import { IoMdClose } from "react-icons/io";
+import { Link as ScrollLink } from 'react-scroll';
 
 
 const Navbar = () => {
+  // const param = useParams().id
+  const {id: userId} = useParams()
     const [modal, setModal] = useState(false)
+  const [data, setData] = useState([])
 
  
     const toggleModal = () => {
         setModal(!modal)
     }
 
+
+    const fetchProfile = async ()=>{
+      try{
+        const accessToken = localStorage.getItem("access_token")
+
+
+        if(!accessToken){
+          // Handle the case where the access token is not available
+      console.error('Access token not found')
+    }
+
+         const res = await axios.get(URL+"/api/users/"+userId, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          }
+        })
+         setName(res.data.name)
+         setEmail(res.data.email)
+         setPassword(res.data.password)
+         console.log(res.data)
+         setData(res.data)
+      }
+      catch(err){
+         console.log(err)
+      }
+    }
+    
+
+    useEffect(()=>{
+      fetchProfile()
+    
+    },[userId])
   
 
   return (
@@ -25,17 +61,19 @@ const Navbar = () => {
    <Link to={'/'}><img src={Nudelogo} alt="" className="w-24 h-18 object-cover" /></Link>
 
    <div className="flex gap-9 items-center">
-   <Link to={'/'}> <p className='hidden md:block text-lg '>French</p></Link>
-   <Link to={'/'}> <p className='hidden md:block bg-gray-400  text-white text-lg px-10 py-2'>English</p></Link>
+   {/* <Link to={'/'}> <p className='hidden md:block text-lg '>French</p></Link> */}
+   {/* <Link to={'/'}> <p className='hidden md:block bg-gray-400  text-white text-lg px-10 py-2'>English</p></Link> */}
    </div>
 
   
     
-    {/* <Link to={user?'/findapartment':"/clientlogin" }><p className='text-green-700 text-lg font-medium hover:bg-green-800 hover:text-white hover:rounded-full hover:px-1.5'>Find your Apartment</p></Link> */}
-    <Link to={'/quotepage'}><p className='hidden md:block text-lg font-medium border border-[#BA8565] px-3 py-2 hover:bg-black hover:text-white '>Reservation</p></Link>
-    {/* <Link to="/events"><p className='hidden md:block text-black text-lg font-medium hover:bg-white hover:rounded-full hover:border-2 hover:border-black hover:px-1.5 '>Events</p></Link> */}
-    {/* <Link to="/communities"><p className='hidden md:block text-black text-lg font-medium hover:bg-white hover:rounded-full hover:border-2 hover:border-black hover:px-1.5 '>Testimonials</p></Link> */}
-    <Link to={'/login'}><p className='hidden md:block  text-lg font-medium hover:bg-black  hover:text-white px-2'>Login</p></Link>
+<div className="flex items-center gap-x-6 ml-[700px]">
+<Link to={'/quotepage'}><p className='hidden md:block text-lg font-medium border border-[#BA8565] px-3 py-2 hover:bg-black hover:text-white '>Reservation</p></Link>
+
+<p className="text-lg hover:bg-[#EFF1F5] hover:px-12">{data.email}</p>
+<Link to={'/login'}><p className='hidden md:block  text-lg font-medium hover:bg-black  hover:text-white px-2'>Login</p></Link>
+</div>
+  
 
     {modal ? (<IoMdClose onClick={toggleModal} size={30} />) : (<HiBars3 onClick={toggleModal}  size={30} />)}
     {/* <Link to="/communities"><p className='hidden md:block text-black text-lg font-medium hover:bg-white hover:rounded-full hover:border-2 hover:border-black hover:px-1.5 '>Reservations</p></Link> */}
@@ -45,16 +83,26 @@ const Navbar = () => {
         <div className="bg-white h-screen absolute right-0 top-24 pt-10 w-[350px] z-40">
           <div className="items-center justify-center flex flex-col gap-y-6">
             <Link to={'/aboutus'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">About Us</p></Link>
-            <Link to={'/'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Services</p></Link>
-            <Link to={'/'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Testimonials</p></Link>
+            {/* <ScrollLink to="services" smooth={true} duration={500} className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">
+        Services
+      </ScrollLink>
+      <ScrollLink to="testimonials" smooth={true} duration={500} className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">
+        Testimonials
+      </ScrollLink> */}
             <Link to={'/events'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Events</p></Link>
             <Link to={'/quotepage'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Reservations</p></Link>
             <Link to={'/contactus'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Contact Us</p></Link>
-            <Link to={'/'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Our Fleet</p></Link>
+             {/* <ScrollLink to="fleet" smooth={true} duration={500} className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">
+        Our Fleet
+      </ScrollLink> */}
 
-            <Link to={''}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">Your Activity</p></Link>
-            <Link to={'/login'}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">Login/out</p></Link>
-            <Link to={'/register'}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">Sign-in/Up</p></Link>
+
+                    
+            <Link to={'/login'}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">Login</p></Link>
+            <Link to={'/register'}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">Sign Up</p></Link>
+
+
+         
             {/* <Link to={}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">History</p></Link> */}
 
 

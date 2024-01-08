@@ -9,44 +9,26 @@ import { HiOutlineArchiveBox } from "react-icons/hi2";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Aboutus from '../assets/GenevaExhibition.jpg'
+import EventTile from '../components/EventTile';
 
 
-const data = [
-   {
-  id : 1
-},
-{
-  id : 2
-},
-{
-  id : 3
-},
-{
-  id : 4
-},
-// {
-//   id : 5
-// },
-// {
-//   id : 6
+
+// const EventTile = ({item}) => {
+//   console.log(item)
+//   return (
+//     <div className='flex flex-col items-center text-center '>
+//     {/* <img src={IF+item.photo ? ("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyv0Jw7UCKOL4gd3nf_mqjhDc2yrsiWYd2f1L-PPzhNg&s") : (IF+item.photo)} alt='' className='w-[400px] h-[230px] object-cover items-center'/> */}
+//     <img src={IF+item?.photo} alt='' className='w-[400px] h-[230px] object-cover items-center'/>
+//     <div>
+//     <p className='font-bold text-xl mt-2 '>{item.exhibitionName}</p>
+//     <p className='text-lg mt-2'>{item.description}</p>
+//     </div>
+
+//     <button className='border-2 bg-white px-2 py-1 mt-2'>Book Now</button>
+//   </div>
+
+//   )
 // }
-
-]
-
-const EventTile = ({item}) => {
-  return (
-    <div className='flex flex-col items-center text-center '>
-    <img src={Aboutus} alt='' className='w-[400px] h-[230px] object-cover items-center'/>
-    <div>
-    <p className='font-bold text-xl mt-2 '>Geneva Motor Show</p>
-    <p className='text-lg mt-2'>planning to attend the geneva motor <br /> show, coming up between 26 <br /> february to 3rd March 2023? Talk to <br /> us lets help you arrange the logistics </p>
-    </div>
-
-    <button className='border-2 bg-white px-2 py-1 mt-2'>Book Now</button>
-  </div>
-
-  )
-}
 
 {/* <div className='flex flex-col items-center'>
 <img src={AirportTransfers} alt='' className='w-[300px] h-[220px] object-cover items-center'/>
@@ -60,8 +42,9 @@ const Events = () => {
   const navigate=useNavigate()
     const [showConfirmation, setShowConfirmation] = useState("")
     const [items, setItems] = useState([])
+    const [isLoading,setIsLoading]=useState(false)
 
-    const fetchApartments = async () => {
+    const fetchEvents = async () => {
 
     //   const accessToken = localStorage.getItem("access_token");
 
@@ -70,6 +53,8 @@ const Events = () => {
     //     console.error('Access token not fund')
     //   }
 
+    setIsLoading(true)
+    try{
 
         const res = await axios.get(URL+"/api/events"
         //,{
@@ -79,12 +64,19 @@ const Events = () => {
         // }
         )
         setItems(res.data)
-        console.log(res.data)
+        // console.log(res.data)
+    }catch(err){
+      console.log(err)
+      setIsLoading(true)
+    } finally {
+      setIsLoading(false); // Set loading back to false
+
     }
+  }
 
 
     useEffect(() => {
-      fetchApartments()
+      fetchEvents()
     }, [])
 
 
@@ -108,7 +100,7 @@ const Events = () => {
           },
         })
         setItems((prevData) => prevData.filter(item => item._id !== itemId));
-        console.log(res.data)
+        // console.log(res.data)
       }
       catch(err){
         console.log(err)
@@ -131,11 +123,11 @@ const Events = () => {
 
 
       <div className='grid md:grid-cols-2 md:gap-x-24 grid-cols-1 items-center justify-center px-4 md:px-64 mb-32 gap-y-9'>
-      {data.map((item, id) => 
+      {isLoading ? (<div className='h-[40vh] flex justify-center items-center'>Loading ...</div>) : (items.map((item, id) => 
         //  <div key={id} class="h-screen grid grid-cols-2 gap-4 content-start items-center px-64 mb-32">
-        <div key={id} class="">
-             <EventTile item={item} />
-             </div>
+        <div className="">
+             <EventTile key={item._id} item={item} />
+             </div> )
 )}
 </div>
       

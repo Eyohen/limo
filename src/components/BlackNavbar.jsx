@@ -1,14 +1,57 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 // import { UserContext } from "../context/UserContext"
 import axios from "axios";
-// import { IF, URL } from "../url"
+import { IF, URL } from "../url"
 import Blacklogo from "../assets/logoremove.png";
 import { HiBars3 } from "react-icons/hi2";
 import { IoMdClose } from "react-icons/io";
+import authService from "../authService";
+import { Link as ScrollLink } from 'react-scroll';
 
 const BlackNavbar = () => {
+  const {id: userId} = useParams()
+  const [user, setUser] = useState([])
   const [modal, setModal] = useState(false);
+
+
+//   const fetchUser = async () => {
+
+//     try{
+     
+//     const accessToken = localStorage.getItem("access_token");
+
+//     if(!accessToken){
+//           // Handle the case where the access token is not available
+//       console.error('Access token not found')
+//     }
+
+
+//       const res = await axios.get(URL+"/api/users/"+userId,{
+//         headers: {
+//           Authorization: `Bearer ${accessToken}`,
+//         }
+//       }
+//       )
+//       setUser(res.data)
+//       console.log(res.data)
+//   }
+//   catch(err){
+//     console.log(err)
+//   }
+// } 
+
+
+useEffect(() => {
+  const fetchUserDetails = async () => {
+    try {
+      await authService.getUser()
+    } catch (error){
+   
+    }
+  }
+},[])
+
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => {
@@ -41,31 +84,33 @@ const BlackNavbar = () => {
         </Link>
 
         <div className="flex gap-9 items-center">
-          <Link to={"/"}>
+          {/* <Link to={"/"}>
             {" "}
             <p className="hidden md:block text-lg text-white">French</p>
-          </Link>
-          <Link to={"/"}>
+          </Link> */}
+          {/* <Link to={"/"}>
             {" "}
             <p className="hidden md:block bg-gray-400  text-white text-lg px-10 py-2">
               English
             </p>
-          </Link>
+          </Link> */}
         </div>
 
-        {/* <Link to={user?'/findapartment':"/clientlogin" }><p className='text-green-700 text-lg font-medium hover:bg-green-800 hover:text-white hover:rounded-full hover:px-1.5'>Find your Apartment</p></Link> */}
-        <Link to={"/services"}>
+
+          <div className="flex items-center gap-x-6 ml-[700px]">
+        <Link to={"/quotepage"}>
           <p className="hidden md:block text-white text-lg font-medium border border-[#BA8565] px-3 py-2 hover:bg-white hover:text-black hover:border-black">
             Reservation
           </p>
         </Link>
-        {/* <Link to="/events"><p className='hidden md:block text-black text-lg font-medium hover:bg-white hover:rounded-full hover:border-2 hover:border-black hover:px-1.5 '>Events</p></Link> */}
-        {/* <Link to="/communities"><p className='hidden md:block text-black text-lg font-medium hover:bg-white hover:rounded-full hover:border-2 hover:border-black hover:px-1.5 '>Testimonials</p></Link> */}
+      
         <Link to={"/login"}>
           <p className="hidden md:block text-white text-lg font-medium hover:bg-white hover:border-2 hover:text-black hover:px-2">
             Login
           </p>
         </Link>
+
+        </div>
         
         {modal ? (   <IoMdClose onClick={toggleModal} color="white" size={30} />) : (  <HiBars3 onClick={toggleModal} color="white" size={30} />) }
         
@@ -81,16 +126,18 @@ const BlackNavbar = () => {
                   About Us
                 </p>
               </Link>
-              <Link to={"/"}>
+              {/* <Link to={"/#services"}>
                 <p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">
                   Services
                 </p>
-              </Link>
-              <Link to={"/"}>
-                <p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">
-                  Testimonials
-                </p>
-              </Link>
+              </Link> */}
+              <ScrollLink to="services" smooth={true} duration={500} className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">
+        Services
+      </ScrollLink>
+      <ScrollLink to="testimonials" smooth={true} duration={500} className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">
+        Testimonials
+      </ScrollLink>
+             
               <Link to={"/events"}>
                 <p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">
                   Events
@@ -101,27 +148,22 @@ const BlackNavbar = () => {
                   Reservations
                 </p>
               </Link>
-              <Link to={"/"}>
-                <p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">
-                  Our Fleet
-                </p>
-              </Link>
+              <ScrollLink to="fleet" smooth={true} duration={500} className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">
+        Our Fleet
+      </ScrollLink>
 
-              <Link to={""}>
-                <p className="text-lg hover:bg-[#EFF1F5] hover:px-12">
-                  Your Activity
-                </p>
-              </Link>
+            
               <Link to={"/login"}>
                 <p className="text-lg hover:bg-[#EFF1F5] hover:px-12">
-                  Login/out
+                  Login
                 </p>
               </Link>
               <Link to={"/register"}>
                 <p className="text-lg hover:bg-[#EFF1F5] hover:px-12">
-                  Sign-in/Up
+                  Sign Up
                 </p>
               </Link>
+
               {/* <Link to={}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">History</p></Link> */}
             </div>
             {/* <div onClick={toggleModal} className=""></div>

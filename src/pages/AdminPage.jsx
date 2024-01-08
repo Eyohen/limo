@@ -72,7 +72,7 @@ const AdminPage = () => {
 
 
   return (
-    <div className='w-full'>
+    <div className='w-full bg-[#FAEFE9] h-screen'>
         <div className='flex justify-evenly border h-12 bg-white'>
         {/* <p>AdminNav</p>
         <p>AdminNav</p> */}
@@ -187,7 +187,7 @@ const AdminPage = () => {
                 {/* <td class="px-6 py-4">
                 {item.status == "New pre-leasing" ?  ( <p className='bg-green-400 text-center rounded-3xl text-white'>{item.status}</p>) : ( <p className='bg-red-400  rounded-full text-center text-white'>{item.status}</p>)}
                 </td> */}
-                <td class="px-6 py-2">{item.date}</td>
+                <td class="px-6 py-2">{new Date(item?.date).toDateString()}</td>
                 <Link to={`/reservedetail/${item._id}`}><td class="px-6 py-2"><HiOutlineArchiveBox className='mt-3'/></td></Link>
                 <td class="px-6 py-2" onClick={() => handleDelete(item._id)}><SlTrash className='text-red-800'/></td>
                

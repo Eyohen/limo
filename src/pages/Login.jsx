@@ -10,17 +10,17 @@ import Navbar from "../components/Navbar"
 
 
 const Login = () => {
-  const [email,setEmail]=useState("")
-  const [password,setPassword]=useState("")
-  const [error,setError]=useState(false)
+  const [email, setEmail]=useState("")
+  const [password, setPassword]=useState("")
+  const [error, setError]=useState(false)
 //   const {setUser}=useContext(UserContext)
   const [isLoading, setIsLoading] = useState(false);
-  const navigate=useNavigate()
+  const navigate = useNavigate()
 
-  const handleLogin=async()=>{
+  const handleLogin = async()=>{
     setIsLoading(true); 
     try{
-      // const res = await axios.post(URL+"/api/auth/login",{email,password},{withCredentials:true})
+     
       const res = await axios.post(URL+"/api/auth/login",{email,password})
 
       const { access_token } = res.data;
@@ -30,12 +30,16 @@ const Login = () => {
         // setUser(res.data)
         navigate("/")
       }
+   
     }
+    
     catch(err){
       setError(true)
+      navigate("/login")
       console.log(err)
     } finally {
       setIsLoading(false); // Set loading back to false
+
     }
 
   }
@@ -51,13 +55,12 @@ const Login = () => {
          <img src={benzinterior} alt="" className="w-[500px] h-[300px] object-cover items-center" />
 
 
-        <form>
          <div className="flex flex-col mt-8 space-y-2 items-center ">
-            <label for="first_name" class="block md:mr-[300px] mr-[210px]">Email</label>
-            <input onChange={(e)=>setEmail(e.target.value)} type="text" id="first_name" class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg block w-64 md:w-[350px] p-2.5" placeholder="e.g johndoe@gmail.com" required />
+            <label className="block md:mr-[300px] mr-[210px]">Email</label>
+            <input onChange={(e)=>setEmail(e.target.value)} type="email"  className="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg block w-64 md:w-[350px] p-2.5" placeholder="e.g johndoe@gmail.com" />
         
-            <label for="password" class="block md:mr-[270px] mr-[180px]">Password</label>
-            <input onChange={(e)=>setPassword(e.target.value)} type="text" id="first_name" class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg block w-64 md:w-[350px] p-2.5 " placeholder="******" required />
+            <label className="block md:mr-[270px] mr-[180px]">Password</label>
+            <input onChange={(e)=>setPassword(e.target.value)} type="password"  className="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg block w-64 md:w-[350px] p-2.5 " placeholder="******"  />
         
 
           {/* <label >Enter Email</label>
@@ -73,7 +76,7 @@ const Login = () => {
          </div>
         </div>
 
-        </form>
+ 
      
 
 

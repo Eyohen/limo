@@ -1,5 +1,5 @@
 import React from 'react'
-import NudeLogo from '../assets/NudeLogo.png'
+import NudeLogo from '../assets/logoremove.png'
 import { Link } from 'react-router-dom'
 import tiktok from '../assets/tiktok.png'
 import instagram from '../assets/instagram.png'
@@ -72,7 +72,7 @@ const Footer = () => {
 
 
 
-        <p className='text-center text-sm mt-6'>Copyright@2023 Limo Geneva Sarl</p>
+        <p className='text-center text-sm mt-6'>Copyright@2023 Limo Transport Pro </p>
     </div>
   )
 }

@@ -2,10 +2,12 @@ import React from 'react'
 import Tours from '../assets/Tours.jpg'
 import AirportTransfers from '../assets/AirportTransfers.jpg'
 import EventProtocols from '../assets/EventProtocols.jpg'
+import { Link, useParams } from "react-router-dom";
+import { Link as ScrollLink } from 'react-scroll';
 
 const ThirdLayer = () => {
   return (
-    <div className='bg-white'>
+    <div className='bg-white' id="services">
       <div className='flex flex-col items-center'>
         <button className='text-3xl font-bold border-2 border-blue-500 py-1 text-black px-4 rounded-tl-lg rounded-br-lg shadow-xl text-center mt-2'>Our Services</button>
         </div>
