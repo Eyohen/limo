@@ -85,7 +85,7 @@ const [timer, setTimer] = useState(null)
       <div className=' bg-gray-100 w-full h-full flex justify-center items-center '>
       {slides?.map((item, index)=><div style={{backgroundImage:`url(${item.url})`}} className={`w-full h-full relative bg-center bg-cover duration-500 brightness-75 flex justify-center items-center ${index === currentIndex ? '': ''} ${index === currentIndex ? 'animate-fadeIn': ' opacity-0 hidden'}`}>
         {/* <p className='text-[#BA8565] text-5xl justify-center text-center font-bold '>{slides[currentIndex].text}</p> */}
-        <p className={`${item.textColor} md:max-w-[900px] max-w-[1200px] right-9 absolute text-4xl md:text-7xl font-light pt-[370px] ml-[500px] mt-[170px] md:mt-[50px]` }>{item.text}</p>
+        <p className={`${item.textColor} md:max-w-[900px] right-9 absolute text-4xl md:text-7xl font-light pt-[370px] ml-[100px] md:ml-[500px] mt-[170px] md:mt-[50px]` }>{item.text}</p>
 
         
 
@@ -98,19 +98,20 @@ const [timer, setTimer] = useState(null)
       <div className='absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer '>
         <BsChevronCompactRight onClick={nextSlide} size={25}/>
       </div>
-      <div className='items-center flex justify-center'>
+      {/* <div className='items-center flex justify-center'>
       <div className='flex items-center justify-center gap-4 absolute top-[95%] '>
         {slides.map((slide, slideIndex) => (
           <div key={slideIndex} onClick={() => goToSlide(slideIndex)} className='text-2xl cursor-pointer'>
-              {/* <IoRadioButtonOn /> */}
+              {/* <IoRadioButtonOn /> 
             <IoRadioButtonOffOutline color='white' size={20} />
           </div>
         ))}
-      </div>
-      </div>
+      </div> 
+      </div> */}
 
 
-    </div>
+      </div> 
+  
 
 
 
