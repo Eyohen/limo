@@ -25,7 +25,7 @@ const ReservationDetail = () => {
 
 
 
-    const getReservation = async() => {
+    const getReservation = async () => {
     //   e.preventDefault()
     //   const reservation = {
     //     pickUp,

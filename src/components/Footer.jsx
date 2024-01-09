@@ -6,6 +6,7 @@ import instagram from '../assets/instagram.png'
 import twitter from '../assets/twitter.png'
 import youtube from '../assets/youtube.png'
 import facebook from '../assets/facebook.png'
+import { Link as ScrollLink } from 'react-scroll';
 
 
 const Footer = () => {
@@ -29,11 +30,25 @@ const Footer = () => {
         <div className=''>  
         <Link to={'/'}><p className='font-bold'>Home</p></Link>
         <Link to={'/aboutus'}><p className='font-bold mt-3'>About Us</p></Link>
-        <Link to={'/services'}><p className='font-bold mt-3'>Services</p></Link>
+  
+        <p className='mt-3'>
+        <ScrollLink to="services" smooth={true} duration={500} className='font-bold cursor-pointer'>
+        Services
+      </ScrollLink>
+      </p>
+      <p className='mt-3'>
+        <ScrollLink to="testimonials" smooth={true} duration={500} className='font-bold cursor-pointer'>
+        Testimonials
+      </ScrollLink>
+      </p>
         <Link to={'/events'}><p className='font-bold mt-3'>Events</p></Link>
         <Link to={'/contactus'}><p className='font-bold mt-3'>Contact Us</p></Link>
         <Link to={'/quotepage'}><p className='font-bold mt-3'>Reservations</p></Link>
-        <Link to={'/fleet'}><p className='font-bold mt-3'>Our Fleet</p></Link>
+        <p className='mt-3'>
+        <ScrollLink to="fleet" smooth={true} duration={500} className='font-bold mt-3 cursor-pointer'>
+        Our Fleet
+      </ScrollLink>
+      </p>
         </div>
 
 

@@ -27,6 +27,7 @@ const Login = () => {
  
       if(res.status == 200){
         localStorage.setItem("access_token", access_token)   
+        localStorage.setItem("currentUser", JSON.stringify(res.data))
         // setUser(res.data)
         navigate("/")
       }
@@ -35,7 +36,7 @@ const Login = () => {
     
     catch(err){
       setError(true)
-      navigate("/login")
+      navigate("/")
       console.log(err)
     } finally {
       setIsLoading(false); // Set loading back to false

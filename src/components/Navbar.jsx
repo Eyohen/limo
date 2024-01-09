@@ -1,5 +1,5 @@
 import React,{ useContext, useEffect, useState } from "react"
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 // import { UserContext } from "../context/UserContext"
 import axios from "axios"
 import { IF, URL } from "../url"
@@ -11,9 +11,10 @@ import { Link as ScrollLink } from 'react-scroll';
 
 const Navbar = () => {
   // const param = useParams().id
-  const {id: userId} = useParams()
+  // const {id: userId} = useParams()
     const [modal, setModal] = useState(false)
   const [data, setData] = useState([])
+  const navigate = useNavigate()
 
  
     const toggleModal = () => {
@@ -21,24 +22,29 @@ const Navbar = () => {
     }
 
 
-    const fetchProfile = async ()=>{
+    
+
+    const fetchProfile = async () => {
       try{
         const accessToken = localStorage.getItem("access_token")
-
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"))
+        console.log(typeof currentUser)
+        if(!currentUser){
+          return ;
+        }
+  
 
         if(!accessToken){
           // Handle the case where the access token is not available
       console.error('Access token not found')
     }
 
-         const res = await axios.get(URL+"/api/users/"+userId, {
+         const res = await axios.get(URL+"/api/users/"+currentUser?._id, {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           }
         })
-         setName(res.data.name)
-         setEmail(res.data.email)
-         setPassword(res.data.password)
+        
          console.log(res.data)
          setData(res.data)
       }
@@ -51,8 +57,15 @@ const Navbar = () => {
     useEffect(()=>{
       fetchProfile()
     
-    },[userId])
-  
+    },[])
+
+
+    const logOut = async () => {
+      localStorage.removeItem("access_token");
+      localStorage.removeItem("currentUser")
+      setData(null)
+      navigate("/login")
+    }  
 
   return (
     <div className='h-25 items-center bg-[#FAEFE9] z-20 w-full'>
@@ -70,8 +83,12 @@ const Navbar = () => {
 <div className="flex items-center gap-x-6 md:ml-[700px]">
 <Link to={'/quotepage'}><p className='hidden md:block text-lg font-medium border border-[#BA8565] px-3 py-2 hover:bg-black hover:text-white '>Reservation</p></Link>
 
-<p className="text-lg hover:bg-[#EFF1F5] hover:px-12">{data.email}</p>
-<Link to={'/login'}><p className='hidden md:block  text-lg font-medium hover:bg-black  hover:text-white px-2'>Login</p></Link>
+
+
+
+{data ? (<p className="text-lg hover:bg-[#EFF1F5] hover:px-12">{data.email}</p>) : (<Link to={'/login'}><p className='hidden md:block  text-lg font-medium hover:bg-black hover:text-white px-2'>Login</p></Link>)}
+
+
 </div>
   
 
@@ -97,8 +114,8 @@ const Navbar = () => {
       </ScrollLink> */}
 
 
-                    
-            <Link to={'/login'}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">Login</p></Link>
+                    {data ? (<p onClick={logOut} className="text-lg hover:bg-[#EFF1F5] hover:px-12">LogOut</p>) : (<Link to={'/login'}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">Login</p></Link>) }
+        
             <Link to={'/register'}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">Sign Up</p></Link>
 
 

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 // import { UserContext } from "../context/UserContext"
 import axios from "axios";
 import { IF, URL } from "../url"
@@ -13,44 +13,53 @@ const BlackNavbar = () => {
   const {id: userId} = useParams()
   const [user, setUser] = useState([])
   const [modal, setModal] = useState(false);
+  const [data, setData] = useState([])
+  const navigate = useNavigate()
 
 
-//   const fetchUser = async () => {
-
-//     try{
-     
-//     const accessToken = localStorage.getItem("access_token");
-
-//     if(!accessToken){
-//           // Handle the case where the access token is not available
-//       console.error('Access token not found')
-//     }
+  const fetchProfile = async () => {
+    try{
+      const accessToken = localStorage.getItem("access_token")
+      const currentUser = JSON.parse(localStorage.getItem("currentUser"))
+      console.log(typeof currentUser)
 
 
-//       const res = await axios.get(URL+"/api/users/"+userId,{
-//         headers: {
-//           Authorization: `Bearer ${accessToken}`,
-//         }
-//       }
-//       )
-//       setUser(res.data)
-//       console.log(res.data)
-//   }
-//   catch(err){
-//     console.log(err)
-//   }
-// } 
+      if(!currentUser){
+        return ;
+      }
 
 
-useEffect(() => {
-  const fetchUserDetails = async () => {
-    try {
-      await authService.getUser()
-    } catch (error){
-   
+      if(!accessToken){
+        // Handle the case where the access token is not available
+    console.error('Access token not found')
+  }
+
+       const res = await axios.get(URL+"/api/users/"+currentUser?._id, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        }
+      })
+      
+       console.log(res.data)
+       setData(res.data)
+    }
+    catch(err){
+       console.log(err)
     }
   }
-},[])
+  
+
+  useEffect(()=>{
+    fetchProfile()
+  
+  },[])
+
+  const logOut = async () => {
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("currentUser");
+    setData(null)
+    navigate("/login")
+  }  
 
 
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -104,11 +113,13 @@ useEffect(() => {
           </p>
         </Link>
       
-        <Link to={"/login"}>
+        {/* <Link to={"/login"}>
           <p className="hidden md:block text-white text-lg font-medium hover:bg-white hover:border-2 hover:text-black hover:px-2">
             Login
           </p>
-        </Link>
+        </Link> */}
+
+{data ? (<p className="text-lg text-white hover:bg-[#EFF1F5] hover:px-12">{data.email}</p>) : (<Link to={'/login'}><p className='hidden md:block  text-lg font-medium hover:bg-black hover:text-white px-2'>Login</p></Link>)}
 
         </div>
 
@@ -156,11 +167,13 @@ useEffect(() => {
       </ScrollLink>
 
             
-              <Link to={"/login"}>
+              {/* <Link to={"/login"}>
                 <p className="text-lg hover:bg-[#EFF1F5] hover:px-12">
                   Login
                 </p>
-              </Link>
+              </Link> */}
+                 {data ? (<p onClick={logOut} className="text-lg hover:bg-[#EFF1F5] hover:px-12">LogOut</p>) : (    <Link to={'/login'}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">Login</p></Link>) }
+
               <Link to={"/register"}>
                 <p className="text-lg hover:bg-[#EFF1F5] hover:px-12">
                   Sign Up
