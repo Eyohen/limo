@@ -119,7 +119,7 @@ const BlackNavbar = () => {
           </p>
         </Link> */}
 
-{data ? (<p className="text-lg text-white hover:bg-[#EFF1F5] hover:px-12">{data.email}</p>) : (<Link to={'/login'}><p className='hidden md:block  text-lg font-medium hover:bg-black hover:text-white px-2'>Login</p></Link>)}
+{data ? (<p className="text-lg text-white  hover:px-12">{data.email}</p>) : (<Link to={'/login'}><p className='hidden md:block  text-lg font-medium hover:bg-black hover:text-white px-2'>Login</p></Link>)}
 
         </div>
 

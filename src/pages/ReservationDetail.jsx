@@ -82,6 +82,7 @@ const ReservationDetail = () => {
             <div className='flex flex-col mx-auto items-center justify-center mt-16 space-y-4'>
             <p className='bg-[#FAEFE9] font-bold rounded-lg border border-gray-300 px-6 py-2'>Pick Up Location: {reserves.pickUp}</p>
             <p className='bg-[#FAEFE9] font-bold rounded-lg border border-gray-300 px-6 py-2'>Arrival Location: {reserves.arrival}</p>
+            <p className='bg-[#FAEFE9] font-bold rounded-lg border border-gray-300 px-6 py-2'>Phone Number: {reserves.phone}</p>
             <p className='bg-[#FAEFE9] font-bold rounded-lg border border-gray-300 px-6 py-2'>Time: {reserves.time}</p>
             <p className='bg-[#FAEFE9] font-bold rounded-lg border border-gray-300 px-6 py-2'>Date: {reserves.date}</p>
             <p className='bg-[#FAEFE9] font-bold rounded-lg border border-gray-300 px-6 py-2'>Vehicle: {reserves.vehicle}</p>

@@ -13,6 +13,7 @@ const QuotePage = () => {
     const [pickUp, setPickUp] = useState("")
     const [arrival, setArrival] = useState("")
     const [time, setTime] = useState("")
+    const [phone, setPhone] = useState("")
     const [date, setDate] = useState(new Date())
     const [vehicle, setVehicle] = useState("")
     const [passengers, setPassengers] = useState("")
@@ -28,6 +29,7 @@ const QuotePage = () => {
         pickUp,
         arrival,
         time,
+        phone,
         date : startDate,
         vehicle,
         passengers,
@@ -54,6 +56,7 @@ const QuotePage = () => {
           console.log(res.data)
           console.log(reservation)
           setPickUp("")
+          setPhone("")
           setDate("")
           setAirport("")
           setArrival("")
@@ -85,6 +88,7 @@ const QuotePage = () => {
 
         <input onChange={(e)=>setPickUp(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 items-center" placeholder='Enter pick up Location'/>
         <input onChange={(e)=>setArrival(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Enter Arrival Location'/>
+        <input onChange={(e)=>setPhone(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Enter Phone Number'/>
         <input onChange={(e)=>setTime(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Enter Time e.g 3:00pm'/>
         <p className='text-sm text-gray-400 '>Enter Date: <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} className='bg-[#FAEFE9] border border-gray-300 text-sm text-gray-400 rounded-lg mr-[10px] md:mr-[300px] py-2 w-32 md:w-[350px]' placeholder='Enter Date' /></p>
         <input onChange={(e)=>setVehicle(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Enter Type of Vehicle'/>

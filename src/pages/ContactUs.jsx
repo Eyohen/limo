@@ -78,12 +78,12 @@ const ContactUs = () => {
 
   
 
-<div className='flex flex-col space-y-8'>
+<div className='flex flex-col space-y-8 justify-center'>
 
-<p className='text-3xl font-bold'>Let's get in touch, we'd love to hear from you</p>
-<p className='text-orange-600 text-lg'>Phone : <span className='text-black'>+41794186276</span></p>
-<p className='text-orange-600 text-lg'>Whatsapp : <span className='text-black'>+41794186276</span></p>
-<p className='text-orange-600 text-lg'>Email : <span className='text-black'>info@limotransportpro.com</span></p>
+<p className='text-3xl font-bold ml-6 mt-3 md:mt-0'>Let's get in touch, we'd love to hear from you</p>
+<p className='text-orange-600 text-lg ml-6'>Phone : <span className='text-black'>+41794186276</span></p>
+<p className='text-orange-600 text-lg ml-6'>Whatsapp : <span className='text-black'>+41794186276</span></p>
+<p className='text-orange-600 text-lg ml-6'>Email : <span className='text-black'>info@limotransportpro.com</span></p>
 
 
 </div>
