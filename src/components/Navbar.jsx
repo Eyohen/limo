@@ -67,7 +67,7 @@ const Navbar = () => {
 
   
     
-<div className="flex items-center gap-x-6 ml-[700px]">
+<div className="flex items-center gap-x-6 md:ml-[700px]">
 <Link to={'/quotepage'}><p className='hidden md:block text-lg font-medium border border-[#BA8565] px-3 py-2 hover:bg-black hover:text-white '>Reservation</p></Link>
 
 <p className="text-lg hover:bg-[#EFF1F5] hover:px-12">{data.email}</p>

@@ -83,7 +83,7 @@ useEffect(() => {
           <img src={Blacklogo} alt="" className=" w-18 h-10 object-cover" />
         </Link>
 
-        <div className="flex gap-9 items-center">
+        {/* <div className="flex gap-9 items-center"> */}
           {/* <Link to={"/"}>
             {" "}
             <p className="hidden md:block text-lg text-white">French</p>
@@ -94,10 +94,10 @@ useEffect(() => {
               English
             </p>
           </Link> */}
-        </div>
+        {/* </div> */}
 
 
-          <div className="flex items-center gap-x-6 ml-[700px]">
+          <div className="flex items-center gap-x-6 md:ml-[700px]">
         <Link to={"/quotepage"}>
           <p className="hidden md:block text-white text-lg font-medium border border-[#BA8565] px-3 py-2 hover:bg-white hover:text-black hover:border-black">
             Reservation
@@ -111,6 +111,9 @@ useEffect(() => {
         </Link>
 
         </div>
+
+
+       
         
         {modal ? (   <IoMdClose onClick={toggleModal} color="white" size={30} />) : (  <HiBars3 onClick={toggleModal} color="white" size={30} />) }
         
@@ -164,28 +167,9 @@ useEffect(() => {
                 </p>
               </Link>
 
-              {/* <Link to={}><p className="text-lg hover:bg-[#EFF1F5] hover:px-12">History</p></Link> */}
+          
             </div>
-            {/* <div onClick={toggleModal} className=""></div>
-          <div className="modal-content rounded-xl">
-            <p className='text-center text-2xl text-green-700'>Apartment A</p>
-       
-            <div className='flex space-x-4 items-center justify-center mt-3'>
-            <button className='bg-green-700 rounded-full px-2'><HiMinusSmall /></button>
-            <p>
-           9
-            </p>
-            <button  className='bg-green-700 rounded-full px-2'><HiPlusSmall /></button>
-            </div>
-            {/* <div className='items-center justify-center '> */}
-            {/* <button className='bg-green-700 px-2 rounded-full mx-32 mt-6' onClick={toggleModal}>Submit</button> */}
-            {/* </div> */}
-            {/* <button className="close-modal text-white" onClick={toggleModal} >
-              <p className="text-white">CLOSE</p>
-            </button> */}
-            {/*           
-          </div> 
-          */}
+           
           </div>
         )}
       </div>
