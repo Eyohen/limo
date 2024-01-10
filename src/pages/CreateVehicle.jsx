@@ -70,7 +70,7 @@ const CreateVehicle = () => {
   
   
 
-        <p className='text-center font-bold text-xl mt-6'>Create an Event</p>
+        <p className='text-center font-bold text-xl mt-6'>Create an Vehicle</p>
 
      
         <form>
@@ -81,7 +81,7 @@ const CreateVehicle = () => {
         {/* <textarea value={description} onChange={(e)=>setDescription(e.target.value)} className='border w-[270px] md:w-[550px] px-3 py-2'  placeholder='Enter event description' /> */}
       
         <button onClick={handleEvent} className='bg-black text-white px-12 py-3 mt-8 rounded-md mb-8'>Submit</button>
-        {(good && show) && <h3 className="text-green-500 text-lg ">Event Created Successfully</h3>}
+        {(good && show) && <h3 className="text-green-500 text-lg ">Vehicle Created Successfully</h3>}
 </div>
 </form>
 
