@@ -33,7 +33,7 @@ const Home = () => {
       
           <Link to={'/quotepage'}><div>
           <img src={BenzSClass} alt='' className='w-[200px] h-[200px] object-cover  md:rounded-tl-[70px] brightness-75' />
-          <p className='text-center font-bold mt-3'>Mercedez Benz S-Class</p>
+          <p className='text-center font-bold mt-3'>Mercedez  V Class 300</p>
           <p className='text-center font-bold bg-white border-2 border-gray-400 hover:bg-black hover:text-white mt-3'>Book Now</p>
           </div>
           </Link>
