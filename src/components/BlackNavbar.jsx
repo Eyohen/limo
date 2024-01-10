@@ -3,7 +3,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 // import { UserContext } from "../context/UserContext"
 import axios from "axios";
 import { IF, URL } from "../url"
-import Blacklogo from "../assets/logoremove.png";
+import Blacklogo from "../assets/LogoWhiteRemove.png";
 import { HiBars3 } from "react-icons/hi2";
 import { IoMdClose } from "react-icons/io";
 import authService from "../authService";

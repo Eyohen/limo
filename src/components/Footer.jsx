@@ -1,5 +1,5 @@
 import React from 'react'
-import NudeLogo from '../assets/limofootergone.png'
+import NudeLogo from '../assets/LogoWhiteRemove.png'
 import { Link } from 'react-router-dom'
 import tiktok from '../assets/tiktok.png'
 import instagram from '../assets/instagram.png'
