@@ -83,7 +83,12 @@ const AdminPage = () => {
         <h1 className='font-bold md:text-2xl text-xl '>Back</h1>
         </div> */}
 
-        <Link to={'/createevent'}><p className='text-2xl font-bold py-9 px-9'>Create Event</p></Link>
+<div className='flex justify-end'>
+<Link to={'/createevent'}><p className='text-2xl font-bold py-9 px-9'>Create Event</p></Link>
+        <Link to={'/createvehicle'}><p className='text-2xl font-bold py-9 px-9'>Create Vehicle</p></Link> 
+
+</div>
+      
 
       
 

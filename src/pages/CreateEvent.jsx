@@ -118,8 +118,8 @@ const CreateEvent = () => {
         <div className='items-center justify-center flex flex-col mt-16 space-y-8'>
 
         <input onChange={(e)=>setFile(e.target.files[0])}  className="border w-[270px] md:w-[550px] px-3 py-2"  type="file" multiple  />
-        <input value={exhibitionName} onChange={(e)=>setExhibitionName(e.target.value)} className='border w-[270px] md:w-[550px] px-3 py-2'  placeholder='Enter event Name'/>
-        <textarea value={description} onChange={(e)=>setDescription(e.target.value)} className='border w-[270px] md:w-[550px] px-3 py-2'  placeholder='Enter event description' />
+        <input value={exhibitionName} onChange={(e)=>setExhibitionName(e.target.value)} className='border w-[270px] md:w-[550px] px-3 py-2  bg-[#FAEFE9]  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'  placeholder='Enter event Name'/>
+        <textarea value={description} onChange={(e)=>setDescription(e.target.value)} className='border border-gray-300 w-[270px] md:w-[550px] px-3 py-2 bg-[#FAEFE9]  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:'  placeholder='Enter event description' />
         {/* <input value={city} onChange={(e)=>setCity(e.target.value)} className='border w-[270px] md:w-[550px] px-3 py-2' placeholder='Enter City'/>
         <input value={centre} onChange={(e)=>setCentre(e.target.value)} className='border w-[270px] md:w-[550px] px-3 py-2' placeholder='Enter Centre'/>
         <p>Enter Date:<DatePicker selected={startDate} onChange={(date) => setStartDate(date)} className='border mr-[10px] md:mr-[300px] py-2' placeholder='Enter Date' /></p>

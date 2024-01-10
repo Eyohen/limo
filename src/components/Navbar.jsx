@@ -45,7 +45,7 @@ const Navbar = () => {
           }
         })
         
-         console.log(res.data)
+        console.log(res.data)
          setData(res.data)
       }
       catch(err){
