@@ -168,7 +168,7 @@ const AdminContact = () => {
             
                   <td class="px-6 py-2">
                     {/* <Link to={`/reservedetail/${item._id}`}> */}
-                      <HiOutlineArchiveBox onClick={() => navigate(`/reservedetail/${item._id}`)} className="mt-3" />
+                      <HiOutlineArchiveBox onClick={() => navigate(`/seecontact/${item._id}`)} className="mt-3" />
                     {/* </Link> */}
                   </td>
                   <td class="px-6 py-2" onClick={() => handleDelete(item._id)}>
