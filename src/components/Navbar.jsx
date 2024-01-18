@@ -60,6 +60,7 @@ const Navbar = () => {
     },[])
 
 
+
     const logOut = async () => {
       localStorage.removeItem("access_token");
       localStorage.removeItem("currentUser")
@@ -70,8 +71,11 @@ const Navbar = () => {
   return (
     <div className='h-25 items-center bg-[#FAEFE9] z-20 w-full'>
     <div className='flex justify-between p-2 px-6 items-center'>
-   {/* <Link to={'/'}> <p className='text-gray-400 font-bold text-3xl'>Limo Geneva Sarl</p></Link> */}
+   <div className="bg-black rounded-lg">
    <Link to={'/'}><img src={Nudelogo} alt="" className="w-24 h-18 object-cover" /></Link>
+   </div>
+
+
 
    <div className="flex gap-9 items-center">
    {/* <Link to={'/'}> <p className='hidden md:block text-lg '>French</p></Link> */}

@@ -162,6 +162,7 @@ const BlackNavbar = () => {
                   Reservations
                 </p>
               </Link>
+              <Link to={'/contactus'}><p className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">Contact Us</p></Link>
               <ScrollLink to="fleet" smooth={true} duration={500} className="font-bold text-lg hover:bg-[#EFF1F5] hover:px-12">
         Our Fleet
       </ScrollLink>

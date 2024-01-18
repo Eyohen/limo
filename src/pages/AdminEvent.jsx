@@ -9,8 +9,6 @@ import { HiOutlineArchiveBox } from "react-icons/hi2";
 
 
 
-
-
 const AdminEvent = () => {
   const navigate=useNavigate()
     const [showConfirmation, setShowConfirmation] = useState("")

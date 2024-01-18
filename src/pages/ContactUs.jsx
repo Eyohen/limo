@@ -7,65 +7,90 @@ import benzinterior from '../assets/benzinterior.jpg'
 import Footer from "../components/Footer"
 
 import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from 'react-router-dom';
 
 const ContactUs = () => {
-    // const [startDate, setStartDate] = useState(new Date());
-    const [pickUp, setPickUp] = useState("")
-    const [arrival, setArrival] = useState("")
-    const [time, setTime] = useState("")
-    // const [date, setDate] = useState("")
-    const [vehicle, setVehicle] = useState("")
-    const [passengers, setPassengers] = useState("")
-    const [airport, setAirport] = useState("")
-    const [flightNum, setFlightNum] = useState("")
+   
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [phone, setPhone] = useState("")
+    const [description, setDescription] = useState("")
     const [good, setGood] = useState(false)
+    const navigate = useNavigate()
+    const [isLoading, setIsLoading] = useState(false)
 
 
 
-    const CreateReservation = async(e) => {
-      e.preventDefault()
-      const reservation = {
-        pickUp,
-        arrival,
-        time,
-        // date,
-        vehicle,
-        passengers,
-        airport,
-        flightNum
+    const handleContact = async ()=>{
+      setIsLoading(true)
+      try{
+      
+
+        const res = await axios.post(URL+"/api/contacts/create",{name,email,phone,description} )
+   
+        setGood(true)
+        console.log(res.data)
+        
+       
+        navigate("/")
+        
+      }
+      catch(err){
+   
+        console.log(err)
+      }finally {
+        setIsLoading(false)
       }
   
-        try {
+    }
+  
 
-          const accessToken = localStorage.getItem("access_token")
 
 
-          if(!accessToken){
-            // Handle the case where the access token is not available
-        console.error('Access token not found')
-      }
+    // const CreateReservation = async(e) => {
+    //   e.preventDefault()
+    //   const reservation = {
+    //     pickUp,
+    //     arrival,
+    //     time,
+    //     // date,
+    //     vehicle,
+    //     passengers,
+    //     airport,
+    //     flightNum
+    //   }
+  
+    //     try {
 
-          const res =  await axios.post(URL+"/api/reserves/create", reservation, {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-            }
-          })
-          setGood(true)
-          console.log(res.data)
-          console.log(reservation)
-          setPickUp("")
-          setAirport("")
-          setArrival("")
-          setFlightNum("")
-          setTime("")
-          setVehicle("")
-          setPassengers("")
-        }
-        catch(err){
-          console.log(err)
-        }
+    //       const accessToken = localStorage.getItem("access_token")
+
+
+    //       if(!accessToken){
+    //         // Handle the case where the access token is not available
+    //     console.error('Access token not found')
+    //   }
+
+    //       const res =  await axios.post(URL+"/api/reserves/create", reservation, {
+    //         headers: {
+    //           Authorization: `Bearer ${accessToken}`,
+    //         }
+    //       })
+    //       setGood(true)
+    //       console.log(res.data)
+    //       console.log(reservation)
+    //       setPickUp("")
+    //       setAirport("")
+    //       setArrival("")
+    //       setFlightNum("")
+    //       setTime("")
+    //       setVehicle("")
+    //       setPassengers("")
+    //     }
+    //     catch(err){
+    //       console.log(err)
+    //     }
     
-    } 
+    // } 
     
   return (
     <div className="bg-[#FAEFE9]">
@@ -90,18 +115,18 @@ const ContactUs = () => {
 
 {/* 
          <div className=""> */}
-        <form>
+
         <div className='flex flex-col mt-32 space-y-8 items-center '>
 
-        <input onChange={(e)=>setPickUp(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-64 md:w-[350px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 items-center" placeholder='Full Name'/>
-        <input onChange={(e)=>setArrival(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Email'/>
+        <input onChange={(e)=>setName(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-64 md:w-[350px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 items-center" placeholder='Full Name'/>
+        <input onChange={(e)=>setEmail(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Email' type='email'/>
         <input onChange={(e)=>setPhone(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Phone Number'/>
-        <textarea onChange={(e)=>setTime(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-12 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Write your message here'/>
+        <textarea onChange={(e)=>setDescription(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-6 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Write your message here'/>
       
-        <button onClick={CreateReservation} className='bg-black text-white px-12 py-2 mt-8 rounded-md mb-8'>Send Message</button>
-        {good && <h3 className="text-green-500 text-lg ">Request Created Successfully</h3>}
+        <button onClick={handleContact} className='bg-black text-white px-12 py-2 mt-8 rounded-md mb-8'>Send Message</button>
+        {good && <h3 className="text-green-500 text-lg ">Message Sent Successfully</h3>}
 </div>
-</form>
+
 
 {/* 
 </div> */}

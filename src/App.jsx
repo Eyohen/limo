@@ -16,6 +16,7 @@ import AboutUs from './pages/AboutUs'
 import ContactUs from './pages/ContactUs'
 import AuthService from './authService'
 import CreateVehicle from './pages/CreateVehicle'
+import AdminContact from './pages/AdminContact'
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
 <Route exact path="/updateevent/:id" element={<UpdateEvent />}/>
 <Route exact path="/authService/:id" element={<AuthService />}/>
 <Route exact path="/createvehicle" element={<CreateVehicle />}/>
+<Route exact path="/admincontact" element={<AdminContact />}/>
 
 
 </Routes>

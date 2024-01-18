@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { useContext, useState } from "react"
 import axios from "axios"
 import { URL } from "../url"
+import Blacklogo from "../assets/LogoWhiteRemove.png";
 
 
 
@@ -39,7 +40,10 @@ const AdminLogin = () => {
   return (
     <>
     <div className="flex items-center justify-between px-6 md:px-[200px] py-4">
-    <h1 className="text-3xl md:text-3xl font-bold"><Link to="/" className="text-black font-Comfortaa">Limo</Link></h1>
+      <div className="bg-black rounded-lg">
+      <h1 className="text-3xl md:text-3xl font-bold"><Link to="/" className="text-black font-Comfortaa"><img src={Blacklogo} alt="" /></Link></h1>
+      </div>
+   
    
     </div>
 <div className="w-full flex justify-center items-center h-[80vh] ">
@@ -49,10 +53,10 @@ const AdminLogin = () => {
          <input onChange={(e)=>setPassword(e.target.value)} className="w-full px-4 py-2  border border-gray-600 rounded-lg" type="password" placeholder="Enter your password" />
          <button onClick={handleLogin} className="w-full px-4 py-4 text-lg font-bold text-white bg-gray-500 rounded-lg hover:bg-black hover:text-white ">Log in</button>
          {error && <h3 className="text-red-500 text-sm ">Something went wrong</h3>}
-         <div className="flex justify-center items-center space-x-3">
+         {/* <div className="flex justify-center items-center space-x-3">
           <p className="text-green-800">New here?</p>
           <p className="text-gray-500 hover:text-black"><Link to="/register">Register</Link></p>
-         </div>
+         </div> */}
        </div>
     </div>
     {/* <Footer/> */}

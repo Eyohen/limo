@@ -19,6 +19,7 @@ const QuotePage = () => {
     const [passengers, setPassengers] = useState("")
     const [airport, setAirport] = useState("")
     const [flightNum, setFlightNum] = useState("")
+    const [desc, setDesc] = useState("")
     const [selectedVehicle, setSelectedVehicle] = useState([])
     const [good, setGood] = useState(false)
     const [isButtonDisabled, setButtonDisabled] = useState(false);
@@ -77,7 +78,8 @@ const QuotePage = () => {
         vehicle:selectedVehicle,
         passengers,
         airport,
-        flightNum
+        flightNum,
+        desc
       }
   
         try {
@@ -154,7 +156,7 @@ const QuotePage = () => {
         <input onChange={(e)=>setPassengers(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Enter Number of passengers'/>
         <input onChange={(e)=>setAirport(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Enter Airport Name (optional)'/>
         <input onChange={(e)=>setFlightNum(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Enter flight number (optional)'/>
-        <textarea onChange={(e)=>setTime(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-12 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Make a special request (optional)'/>
+        <textarea onChange={(e)=>setDesc(e.target.value)} class="bg-[#FAEFE9] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-12 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Make a special request (optional)'/>
         <button onClick={CreateReservation} className='bg-black text-white px-12 py-2 mt-8 rounded-md mb-8'>Submit</button>
         {good && <h3 className="text-green-500 text-lg ">Request Created Successfully</h3>}
 </div>

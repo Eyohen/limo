@@ -9,7 +9,7 @@ import { HiOutlineArchiveBox } from "react-icons/hi2";
 import AdminNav from "../components/AdminNav";
 
 
-const AdminPage = () => {
+const AdminContact = () => {
   const navigate = useNavigate();
   const [showConfirmation, setShowConfirmation] = useState("");
   const [items, setItems] = useState([]);
@@ -22,7 +22,7 @@ const AdminPage = () => {
       console.error("Access token not fund");
     }
 
-    const res = await axios.get(URL + "/api/reserves", {
+    const res = await axios.get(URL + "/api/contacts", {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
@@ -97,7 +97,7 @@ const AdminPage = () => {
       </div> */}
 
           <h1 className="font-bold text-xl mt-10 text-center">
-            Reservations Created
+            Contacts Created
           </h1>
 
           <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 mt-5">
@@ -107,17 +107,17 @@ const AdminPage = () => {
                   id
                 </th>
                 <th scope="col" class="px-6 py-3 font-light">
-                  pick up
+                  name
                 </th>
                 <th scope="col" class="px-6 py-3 font-light">
-                  destination
+                  email
                 </th>
                 <th scope="col" class="px-6 py-3 font-light">
-                  time
+                  phone
                 </th>
 
                 <th scope="col" class="px-6 py-3 font-light">
-                  date
+                  description
                 </th>
                 <th scope="col" class="px-6 py-3 font-light">
                   details
@@ -160,22 +160,12 @@ const AdminPage = () => {
                     alt=""
                   />
                 </th> */}
-                  <td class="px-6 py-2">{item.pickUp}</td>
-                  <td class="px-6 py-2">{item.arrival}</td>
-                  <td class="px-6 py-2">{item.time}</td>
+                  <td class="px-6 py-2">{item.name}</td>
+                  <td class="px-6 py-2">{item.email}</td>
+                  <td class="px-6 py-2">{item.phone}</td>
+                  <td class="px-6 py-2">{item.description.slice(0, 6)} ...</td>
 
-                  {/* <td class="px-6 py-2">{user.date}</td>
-                <td class="px-6 py-2">{user.time}</td>
-                <td class="px-6 py-2">
-                   {user.type}
-                    </td> */}
-                  {/* <td class="px-6 py-4">
-                {item.status == "New pre-leasing" ?  ( <p className='bg-green-400 text-center rounded-3xl text-white'>{item.status}</p>) : ( <p className='bg-red-400  rounded-full text-center text-white'>{item.status}</p>)}
-                </td> */}
-                  <td class="px-6 py-2">
-                    {new Date(item?.date).toDateString()}
-                  </td>
-
+            
                   <td class="px-6 py-2">
                     {/* <Link to={`/reservedetail/${item._id}`}> */}
                       <HiOutlineArchiveBox onClick={() => navigate(`/reservedetail/${item._id}`)} className="mt-3" />
@@ -201,4 +191,4 @@ const AdminPage = () => {
   );
 };
 
-export default AdminPage;
+export default AdminContact;
