@@ -5,10 +5,11 @@ import { URL } from '../url';
 import Navbar from "../components/Navbar"
 import benzinterior from '../assets/benzinterior.jpg'
 import Footer from "../components/Footer"
-
+import { useNavigate } from 'react-router-dom';
 import "react-datepicker/dist/react-datepicker.css";
 
 const QuotePage = () => {
+  const navigate = useNavigate()
     const [startDate, setStartDate] = useState(new Date());
     const [pickUp, setPickUp] = useState("")
     const [arrival, setArrival] = useState("")
@@ -98,6 +99,7 @@ const QuotePage = () => {
           })
           setButtonDisabled(true);
           setGood(true)
+          navigate('/')
           console.log(res.data)
           console.log(reservation)
           // setPickUp("")

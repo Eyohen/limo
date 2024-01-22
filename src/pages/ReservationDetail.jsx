@@ -69,7 +69,7 @@ const ReservationDetail = () => {
      },[reserveId])
   return (
   
-    <div className='bg-[#FAEFE9] h-screen'>
+    <div className='bg-[#FAEFE9] h-[1000px]'>
       <div className='p-6'>
           <Link to={"/"}>
           <img src={Blacklogo} alt="" className=" w-18 h-10 object-cover" />
