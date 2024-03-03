@@ -12,7 +12,7 @@ import BenzEClass from '../assets/BenzE-Class.jpg'
 import BenzEQS from '../assets/BenzEQS.jpg'
 import firstpic from '../assets/andrea.jpg'
 import secondpic from '../assets/chance.jpg'
-import thirdpic from '../assets/thirdpic.jpeg'
+import thirdpic from '../assets/Daniellimo.jpeg'
 
 const Home = () => {
   return (
@@ -81,7 +81,7 @@ const Home = () => {
 
           <div className='flex flex-col items-center'>
           <img src={thirdpic} alt='' className='w-[100px] h-[100px] object-cover brightness-75' />
-          <p className='font-bold mt-3'>Austin Okocha</p>
+          <p className='font-bold mt-3'>Daniel</p>
           <p className='font-light mt-3'>Limo Transport Pro  is my go to <br /> service whenever im in town and <br /> im always impressed with their <br/> top notch service</p>
           </div>
        
